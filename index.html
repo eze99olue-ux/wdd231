@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Oluebube Eze's WDD231 Course Home Page featuring web development and computer programming coursework.">
+    <meta name="author" content="Oluebube Eze">
+
+    <title>Oluebube Eze | WDD231 Course Home Page</title>
+
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="brand">
+                <img src="images/logo.svg" alt="" width="45" height="45">
+                <span>Oluebube Eze</span>
+            </div>
+
+            <button
+                id="menu-button"
+                class="menu-button"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-controls="primary-nav"
+                aria-expanded="false">
+
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+
+        <nav id="primary-nav" class="navigation">
+            <a href="index.html" class="active" aria-current="page">Home</a>
+            <a href="chamber/index.html">Chamber</a>
+            <a href="project/index.html">Final</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+
+        <div class="home-grid">
+
+            <!-- About Me Section -->
+            <section class="panel about-panel">
+                <h2>About Me</h2>
+
+                <div class="panel-content">
+                    <p>
+                        My name is Oluebube Eze. I am a student at
+                        BYU-Pathway Worldwide, where I am developing my
+                        knowledge and skills in web development and
+                        computer programming.
+                    </p>
+
+                    <p>
+                        I have a background in Business Education and
+                        Accounting. I enjoy learning new technologies,
+                        solving problems, and discovering how technology
+                        can make everyday tasks easier. My goal is to become
+                        a skilled web developer and continue growing in
+                        the technology field.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Student Photo Section -->
+            <section class="panel photo-panel">
+                <h2>Student Photo</h2>
+
+                <div class="photo-container">
+                    <img
+                        src="images/eze.png"
+                        alt="Portrait of Oluebube Eze"
+                        class="student-photo"
+                        width="400"
+                        height="400">
+                </div>
+            </section>
+
+            <!-- Certificate Courses Section -->
+            <section class="panel certificate-panel">
+                <h2>Web Certificate Courses</h2>
+
+                <div class="course-filters" aria-label="Course filters">
+
+                    <button
+                        type="button"
+                        class="filter-button active"
+                        data-filter="all"
+                        aria-pressed="true">
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="CSE"
+                        aria-pressed="false">
+                        CSE
+                    </button>
+
+                    <button
+                        type="button"
+                        class="filter-button"
+                        data-filter="WDD"
+                        aria-pressed="false">
+                        WDD
+                    </button>
+
+                </div>
+
+                <div
+                    id="course-list"
+                    class="course-list"
+                    aria-live="polite">
+                    <!-- JavaScript generates course cards here -->
+                </div>
+
+                <p class="credit-total">
+                    The total credits for courses listed is
+                    <strong id="total-credits">0</strong>
+                </p>
+
+                <div class="course-legend">
+
+                    <span class="legend-item">
+                        <span class="legend-box completed"></span>
+                        Completed
+                    </span>
+
+                    <span class="legend-item">
+                        <span class="legend-box not-completed"></span>
+                        Not Completed
+                    </span>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+
+        <div class="social-links">
+
+            <a
+                href="https://www.linkedin.com/in/ezeoluebube/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit my LinkedIn profile">
+
+                <img src="images/linkedin.svg" alt="" width="30" height="30">
+            </a>
+
+            <a
+                href="https://github.com/eze99olue-ux"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit my GitHub profile">
+
+                <img src="images/github.svg" alt="" width="30" height="30">
+            </a>
+
+        </div>
+
+        <p>
+            &copy; <span id="currentyear"></span>
+            Oluebube Eze | Nigeria
+        </p>
+
+        <p class="last-modified">
+            Last Modification:
+            <span id="lastModified"></span>
+        </p>
+
+    </footer>
+
+</body>
+</html>

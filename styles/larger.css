@@ -1,0 +1,99 @@
+
+/* =====================================
+   LARGER SCREEN LAYOUT
+===================================== */
+
+@media screen and (min-width: 700px) {
+
+    /* Header */
+
+    .header-content {
+        padding: 0.5rem 1rem;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    /* Horizontal navigation */
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        background-color: #202020;
+    }
+
+    .navigation a {
+        border-bottom: none;
+        padding: 0.65rem 1rem;
+    }
+
+    /* Main layout */
+
+    .home-grid {
+        grid-template-columns: 2fr 1fr;
+        gap: 0.7rem;
+        align-items: stretch;
+    }
+
+    .about-panel,
+    .photo-panel {
+        min-height: 230px;
+    }
+
+    .panel-content {
+        font-size: 0.95rem;
+    }
+
+    /* Photo */
+
+    .photo-container {
+        height: calc(100% - 34px);
+        min-height: 195px;
+    }
+
+    .student-photo {
+        height: 190px;
+    }
+
+    /* Certificate */
+
+    .certificate-panel {
+        grid-column: 1 / -1;
+    }
+
+    .course-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* =====================================
+   WIDE DESKTOP
+===================================== */
+
+@media screen and (min-width: 1000px) {
+
+    main {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
+    .home-grid {
+        grid-template-columns: 2fr 1fr;
+        gap: 0.8rem;
+    }
+
+    .about-panel .panel-content {
+        font-size: 1rem;
+    }
+
+    .student-photo {
+        max-width: 250px;
+        height: 200px;
+    }
+
+    .course-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
