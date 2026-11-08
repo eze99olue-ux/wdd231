@@ -5,29 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Business Directory | Abuja Chamber of Commerce</title>
+
     <meta name="description" content="Explore the Abuja Chamber of Commerce member directory and discover businesses, services, and opportunities in Abuja, Nigeria.">
     <meta name="author" content="Oluebube Eze">
     <meta name="theme-color" content="#173d5b">
 
+    <!-- Open Graph Metadata -->
     <meta property="og:title" content="Business Directory | Abuja Chamber of Commerce">
     <meta property="og:description" content="Discover businesses and services through the Abuja Chamber of Commerce directory.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://eze99olue-ux.github.io/wdd231/chamber/directory.html">
     <meta property="og:image" content="https://eze99olue-ux.github.io/wdd231/chamber/images/chamber-logo.svg">
-    <meta property="og:image:alt" content="Abuja Chamber of Commerce logo">
 
-    <title>Business Directory | Abuja Chamber of Commerce</title>
-
+    <!-- Favicon -->
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
+    <!-- JavaScript -->
     <script src="scripts/directory.js" defer></script>
     <script src="scripts/date.js" defer></script>
 </head>
@@ -36,23 +40,30 @@
     <header class="site-header">
         <div class="header-content">
             <a class="brand" href="index.html" aria-label="Abuja Chamber of Commerce home">
-                <img src="images/chamber-logo.svg" alt="Abuja Chamber of Commerce logo" width="60" height="60">
+                <img src="images/chamber-logo.svg"
+                     alt="Abuja Chamber of Commerce logo"
+                     width="60"
+                     height="60">
                 <span>
                     <strong>Abuja Chamber</strong>
                     <small>of Commerce</small>
                 </span>
             </a>
 
-            <button class="menu-toggle" id="menu-toggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                aria-controls="primary-navigation">
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+            <nav class="primary-navigation"
+                 id="primary-navigation"
+                 aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="discover.html">Discover</a>
                 <a href="directory.html" class="active" aria-current="page">Directory</a>
@@ -74,15 +85,21 @@
             <div class="directory-header">
                 <div>
                     <h2 id="directory-title">Our Chamber Members</h2>
-                    <p>Discover trusted businesses and connect with local organisations.</p>
+                    <p>Discover businesses and connect with local organisations.</p>
                 </div>
 
                 <div class="view-controls" aria-label="Choose directory display">
-                    <button type="button" id="grid-view" class="view-button active" aria-pressed="true">
+                    <button type="button"
+                            id="grid-view"
+                            class="view-button active"
+                            aria-pressed="true">
                         <span aria-hidden="true">▦</span> Grid
                     </button>
 
-                    <button type="button" id="list-view" class="view-button" aria-pressed="false">
+                    <button type="button"
+                            id="list-view"
+                            class="view-button"
+                            aria-pressed="false">
                         <span aria-hidden="true">☷</span> List
                     </button>
                 </div>
