@@ -1,6 +1,5 @@
 
 const membersContainer = document.querySelector("#members-container");
-const memberCount = document.querySelector("#member-count");
 
 const gridButton = document.querySelector("#grid-view");
 const listButton = document.querySelector("#list-view");
@@ -8,196 +7,147 @@ const listButton = document.querySelector("#list-view");
 const menuButton = document.querySelector("#menu-toggle");
 const mainNav = document.querySelector("#primary-navigation");
 
-// Return the membership name and CSS class.
+// Return membership level as readable text
 function getMembershipName(level) {
     if (level === 3) {
-        return {
-            name: "Gold Member",
-            className: "gold"
-        };
+        return "Gold Member";
     }
 
     if (level === 2) {
-        return {
-            name: "Silver Member",
-            className: "silver"
-        };
+        return "Silver Member";
     }
 
-    return {
-        name: "Member",
-        className: "member"
-    };
+    return "Member";
 }
 
-// Create an individual business card.
+// Create an individual member card
 function createMemberCard(member) {
     const card = document.createElement("article");
-    card.className = "member-card";
+    card.classList.add("member-card");
 
     const image = document.createElement("img");
-    image.className = "member-image";
+    image.classList.add("member-image");
     image.src = `images/${member.image}`;
-    image.alt = `${member.name} business image`;
+    image.alt = `${member.name} business logo`;
     image.loading = "lazy";
-    image.width = 400;
-    image.height = 150;
-
-    const heading = document.createElement("h3");
-    heading.textContent = member.name;
-
-    const description = document.createElement("p");
-    description.className = "member-description";
-    description.textContent = member.description;
 
     const details = document.createElement("div");
-    details.className = "member-details";
+    details.classList.add("member-details");
+
+    const name = document.createElement("h3");
+    name.textContent = member.name;
+
+    const description = document.createElement("p");
+    description.textContent = member.description;
 
     const address = document.createElement("p");
-    const addressLabel = document.createElement("strong");
-    addressLabel.textContent = "Address: ";
-    address.append(addressLabel, document.createTextNode(member.address));
+    address.textContent = `Address: ${member.address}`;
 
     const phone = document.createElement("p");
-    const phoneLabel = document.createElement("strong");
-    phoneLabel.textContent = "Phone: ";
-    phone.append(phoneLabel, document.createTextNode(member.phone));
+    phone.textContent = `Phone: ${member.phone}`;
 
-    const membership = getMembershipName(
-        Number(member.membershipLevel)
-    );
+    const website = document.createElement("p");
+    const websiteLink = document.createElement("a");
 
-    const membershipBadge = document.createElement("span");
-    membershipBadge.className = `membership ${membership.className}`;
-    membershipBadge.textContent = membership.name;
+    websiteLink.href = member.website;
+    websiteLink.textContent = "Visit Website";
+    websiteLink.target = "_blank";
+    websiteLink.rel = "noopener noreferrer";
 
-    const website = document.createElement("a");
-    website.className = "website-link";
-    website.href = member.website;
-    website.textContent = "Visit Website";
-    website.target = "_blank";
-    website.rel = "noopener noreferrer";
+    website.appendChild(websiteLink);
 
-    details.append(address, phone);
+    const membership = document.createElement("p");
+    membership.classList.add("membership-level");
+    membership.textContent = getMembershipName(member.membershipLevel);
 
-    card.append(
-        image,
-        heading,
+    details.append(
+        name,
         description,
-        details,
-        membershipBadge,
-        website
+        address,
+        phone,
+        website,
+        membership
     );
+
+    card.append(image, details);
 
     return card;
 }
 
-// Display all business members.
+// Display all members
 function displayMembers(members) {
     membersContainer.innerHTML = "";
 
-    if (!Array.isArray(members) || members.length === 0) {
-        const message = document.createElement("p");
-        message.className = "error-message";
-        message.textContent =
-            "No business members are currently available.";
-
-        membersContainer.appendChild(message);
-
-        if (memberCount) {
-            memberCount.textContent = "No members found.";
-        }
-
-        return;
-    }
-
-    const fragment = document.createDocumentFragment();
-
     members.forEach((member) => {
-        fragment.appendChild(createMemberCard(member));
+        const card = createMemberCard(member);
+        membersContainer.appendChild(card);
     });
-
-    membersContainer.appendChild(fragment);
-
-    if (memberCount) {
-        memberCount.textContent =
-            `Showing ${members.length} business members`;
-    }
 
     membersContainer.setAttribute("aria-busy", "false");
 }
 
-// Switch between grid and list layouts.
-function setView(view) {
-    const isGrid = view === "grid";
-
-    membersContainer.classList.toggle("members-grid", isGrid);
-    membersContainer.classList.toggle("members-list", !isGrid);
-
-    gridButton.classList.toggle("active", isGrid);
-    listButton.classList.toggle("active", !isGrid);
-
-    gridButton.setAttribute("aria-pressed", String(isGrid));
-    listButton.setAttribute("aria-pressed", String(!isGrid));
-}
-
-// Fetch business members from the JSON file.
-async function loadMembers() {
+// Fetch members from JSON using async/await
+async function getMembers() {
     try {
         const response = await fetch("data/members.json");
 
         if (!response.ok) {
-            throw new Error(
-                `Unable to load members: ${response.status}`
-            );
+            throw new Error("Unable to load member information.");
         }
 
         const members = await response.json();
 
         displayMembers(members);
-
     } catch (error) {
-        console.error("Error loading business members:", error);
-
         membersContainer.innerHTML = "";
 
         const message = document.createElement("p");
-        message.className = "error-message";
+        message.classList.add("error-message");
         message.textContent =
-            "We could not load the business directory. Please try again later.";
+            "Sorry, chamber members could not be loaded. Please try again later.";
 
         membersContainer.appendChild(message);
         membersContainer.setAttribute("aria-busy", "false");
 
-        if (memberCount) {
-            memberCount.textContent = "Directory unavailable.";
-        }
+        console.error("Member loading error:", error);
     }
 }
 
-// Grid and list button events.
+// Switch to grid view
 gridButton.addEventListener("click", () => {
-    setView("grid");
+    membersContainer.classList.remove("members-list");
+    membersContainer.classList.add("members-grid");
+
+    gridButton.classList.add("active");
+    listButton.classList.remove("active");
+
+    gridButton.setAttribute("aria-pressed", "true");
+    listButton.setAttribute("aria-pressed", "false");
 });
 
+// Switch to list view
 listButton.addEventListener("click", () => {
-    setView("list");
+    membersContainer.classList.remove("members-grid");
+    membersContainer.classList.add("members-list");
+
+    listButton.classList.add("active");
+    gridButton.classList.remove("active");
+
+    listButton.setAttribute("aria-pressed", "true");
+    gridButton.setAttribute("aria-pressed", "false");
 });
 
-// Mobile navigation menu.
+// Mobile navigation toggle
 menuButton.addEventListener("click", () => {
-    const isExpanded =
-        menuButton.getAttribute("aria-expanded") === "true";
+    const isOpen = mainNav.classList.toggle("open");
 
-    menuButton.setAttribute("aria-expanded", String(!isExpanded));
+    menuButton.setAttribute("aria-expanded", String(isOpen));
 
     menuButton.setAttribute(
         "aria-label",
-        isExpanded ? "Open navigation menu" : "Close navigation menu"
+        isOpen ? "Close navigation menu" : "Open navigation menu"
     );
-
-    mainNav.classList.toggle("open");
 });
 
-// Load members when the page opens.
-loadMembers();
+// Load members when the page opens
+getMembers();

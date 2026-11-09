@@ -1,411 +1,89 @@
 
 /* =========================================
-   SMALL SCREEN STYLES
+   LARGE SCREEN STYLES
    Abuja Chamber of Commerce
    ========================================= */
 
-:root {
-    --primary-color: #173d5b;
-    --secondary-color: #24577d;
-    --accent-color: #f4a261;
-    --light-background: #f5f7fa;
-    --white: #ffffff;
-    --dark-text: #252525;
-    --muted-text: #555555;
-    --border-color: #d9e0e7;
-    --card-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-}
+@media screen and (min-width: 700px) {
 
-/* General styles */
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: "Nunito Sans", Arial, sans-serif;
-    color: var(--dark-text);
-    background-color: var(--light-background);
-    line-height: 1.6;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-a {
-    color: var(--secondary-color);
-}
-
-button {
-    font: inherit;
-}
-
-.site-header {
-    background-color: var(--white);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.header-content {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0.8rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    text-decoration: none;
-    color: var(--primary-color);
-}
-
-.brand img {
-    width: 52px;
-    height: 52px;
-    object-fit: contain;
-}
-
-.brand span {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-}
-
-.brand strong {
-    font-size: 1.05rem;
-    font-weight: 800;
-}
-
-.brand small {
-    font-size: 0.8rem;
-    color: var(--muted-text);
-}
-
-/* Mobile menu button */
-.menu-toggle {
-    width: 44px;
-    height: 44px;
-    padding: 9px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    background-color: var(--white);
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary-color);
-    border-radius: 3px;
-}
-
-/* Mobile navigation */
-.primary-navigation {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    margin-top: 0.8rem;
-}
-
-.primary-navigation.open {
-    display: flex;
-}
-
-.primary-navigation a {
-    display: block;
-    padding: 0.8rem 1rem;
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 700;
-    border-top: 1px solid var(--border-color);
-}
-
-.primary-navigation a:hover,
-.primary-navigation a:focus,
-.primary-navigation a.active {
-    color: var(--white);
-    background-color: var(--primary-color);
-}
-
-.page-heading {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 3rem 1rem;
-    text-align: center;
-}
-
-.heading-content {
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-.eyebrow {
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-    font-size: 0.78rem;
-    font-weight: 800;
-    margin: 0 0 0.5rem;
-}
-
-.page-heading .eyebrow {
-    color: #ffd19e;
-}
-
-.page-heading h1 {
-    margin: 0 0 0.7rem;
-    font-size: clamp(2rem, 7vw, 3rem);
-    line-height: 1.2;
-    color: var(--white);
-}
-
-.page-heading p:last-child {
-    margin: 0;
-    font-size: 1rem;
-    color: var(--white);
-}
-
-.directory-section {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem 3rem;
-}
-
-.directory-header {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.directory-header h2 {
-    color: var(--primary-color);
-    font-size: 1.6rem;
-    margin: 0 0 0.3rem;
-}
-
-.directory-header p {
-    margin: 0;
-    color: var(--muted-text);
-}
-
-/* Grid and list buttons */
-.view-controls {
-    display: flex;
-    gap: 0.6rem;
-}
-
-.view-button {
-    padding: 0.65rem 1.1rem;
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    background-color: var(--white);
-    color: var(--primary-color);
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.view-button:hover,
-.view-button:focus,
-.view-button.active {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
-.view-button:focus-visible,
-.menu-toggle:focus-visible,
-a:focus-visible {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 3px;
-}
-
-/* =========================================
-   MEMBER GRID
-   ========================================= */
-
-.members-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.3rem;
-}
-
-.member-card {
-    background-color: var(--white);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    text-align: center;
-    padding: 1.2rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.member-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
-
-.member-image {
-    width: 100%;
-    max-width: 150px;
-    height: 110px;
-    object-fit: contain;
-    margin: 0 auto 1rem;
-}
-
-.member-card h3 {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    margin: 0 0 0.7rem;
-}
-
-.member-card p {
-    margin: 0.4rem 0;
-    color: var(--muted-text);
-    overflow-wrap: anywhere;
-}
-
-.member-card a {
-    font-weight: 700;
-    overflow-wrap: anywhere;
-}
-
-.member-card .membership-level {
-    display: inline-block;
-    margin-top: 0.8rem;
-    padding: 0.35rem 0.8rem;
-    border-radius: 20px;
-    background-color: #e8f0f7;
-    color: var(--primary-color);
-    font-size: 0.85rem;
-    font-weight: 800;
-}
-
-/* Loading and error messages */
-.loading-message,
-.error-message {
-    grid-column: 1 / -1;
-    padding: 1.5rem;
-    background-color: var(--white);
-    border-radius: 6px;
-    text-align: center;
-}
-
-/* =========================================
-   LIST VIEW
-   ========================================= */
-
-.members-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.members-list .member-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 1rem;
-}
-
-.members-list .member-card:nth-child(even) {
-    background-color: #eaf0f5;
-}
-
-.members-list .member-image {
-    display: none;
-}
-
-.members-list .member-card h3 {
-    margin-bottom: 0.4rem;
-}
-
-.members-list .membership-level {
-    margin-top: 0.5rem;
-}
-
-.site-footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 2rem 1rem;
-}
-
-.footer-content {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.site-footer h2 {
-    font-size: 1.1rem;
-    margin: 0 0 0.7rem;
-    color: var(--white);
-}
-
-.site-footer p {
-    margin: 0.4rem 0;
-    color: var(--white);
-}
-
-.site-footer a {
-    color: #ffd19e;
-    text-decoration: underline;
-}
-
-.site-footer a:hover,
-.site-footer a:focus {
-    color: var(--white);
-}
-
-.footer-social {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-}
-
-.footer-social h2 {
-    margin-bottom: 0.3rem;
-}
-
-/* =========================================
-   SMALL SCREEN ADJUSTMENTS
-   ========================================= */
-
-@media (max-width: 360px) {
-    .brand strong {
-        font-size: 0.9rem;
+    /* Header and navigation */
+    .header-content {
+        flex-wrap: nowrap;
+        min-height: 90px;
     }
 
-    .brand small {
-        font-size: 0.72rem;
+    .menu-toggle {
+        display: none;
     }
 
-    .directory-section {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
+    .primary-navigation {
+        display: flex;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 0;
+        gap: 0.3rem;
     }
 
-    .member-card {
-        padding: 0.9rem;
+    .primary-navigation a {
+        padding: 0.65rem 0.9rem;
+        border-top: none;
+        border-radius: 4px;
+    }
+
+    /* Directory heading */
+    .directory-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+    }
+
+    /* Member grid */
+    .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Member list */
+    .members-list .member-card {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        text-align: left;
+        gap: 0.5rem 1.5rem;
+    }
+
+    .members-list .member-details {
+        display: contents;
+    }
+
+    .members-list .member-card h3 {
+        grid-column: 1 / -1;
+    }
+
+    /* Footer */
+    .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.5fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .footer-credit {
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.35);
+        padding-top: 0;
+        padding-left: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    /* Three-column directory */
+    .members-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .page-heading {
+        padding: 4.5rem 1rem;
     }
 }
