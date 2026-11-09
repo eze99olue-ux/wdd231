@@ -1,5 +1,5 @@
+
 const membersContainer = document.querySelector("#members-container");
-const memberCount = document.querySelector("#member-count");
 
 const gridButton = document.querySelector("#grid-view");
 const listButton = document.querySelector("#list-view");
@@ -7,20 +7,20 @@ const listButton = document.querySelector("#list-view");
 const menuButton = document.querySelector("#menu-toggle");
 const mainNav = document.querySelector("#primary-navigation");
 
-// Return the correct membership name.
+// Return the membership level name.
 function getMembershipName(level) {
-    if (Number(level) === 3) {
+    if (level === 3) {
         return "Gold Member";
     }
 
-    if (Number(level) === 2) {
+    if (level === 2) {
         return "Silver Member";
     }
 
     return "Member";
 }
 
-// Create one member card.
+// Create an individual member card.
 function createMemberCard(member) {
     const card = document.createElement("article");
     card.classList.add("member-card");
@@ -30,6 +30,8 @@ function createMemberCard(member) {
     image.src = `images/${member.image}`;
     image.alt = `${member.name} business logo`;
     image.loading = "lazy";
+    image.width = 120;
+    image.height = 120;
 
     const details = document.createElement("div");
     details.classList.add("member-details");
@@ -47,8 +49,8 @@ function createMemberCard(member) {
     phone.textContent = `Phone: ${member.phone}`;
 
     const website = document.createElement("p");
-    const websiteLink = document.createElement("a");
 
+    const websiteLink = document.createElement("a");
     websiteLink.href = member.website;
     websiteLink.textContent = "Visit Website";
     websiteLink.target = "_blank";
@@ -74,7 +76,7 @@ function createMemberCard(member) {
     return card;
 }
 
-// Display all members.
+// Display all chamber members.
 function displayMembers(members) {
     membersContainer.innerHTML = "";
 
@@ -82,10 +84,6 @@ function displayMembers(members) {
         const card = createMemberCard(member);
         membersContainer.appendChild(card);
     });
-
-    if (memberCount) {
-        memberCount.textContent = `Showing ${members.length} chamber members`;
-    }
 
     membersContainer.setAttribute("aria-busy", "false");
 }
@@ -96,14 +94,10 @@ async function getMembers() {
         const response = await fetch("data/members.json");
 
         if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
+            throw new Error("Unable to load member information.");
         }
 
         const members = await response.json();
-
-        if (!Array.isArray(members) || members.length === 0) {
-            throw new Error("No member records were found.");
-        }
 
         displayMembers(members);
     } catch (error) {
@@ -117,54 +111,45 @@ async function getMembers() {
         membersContainer.appendChild(message);
         membersContainer.setAttribute("aria-busy", "false");
 
-        if (memberCount) {
-            memberCount.textContent = "Member directory unavailable";
-        }
-
         console.error("Member loading error:", error);
     }
 }
 
 // Switch to grid view.
-if (gridButton && listButton && membersContainer) {
-    gridButton.addEventListener("click", () => {
-        membersContainer.classList.remove("members-list");
-        membersContainer.classList.add("members-grid");
+gridButton.addEventListener("click", () => {
+    membersContainer.classList.remove("members-list");
+    membersContainer.classList.add("members-grid");
 
-        gridButton.classList.add("active");
-        listButton.classList.remove("active");
+    gridButton.classList.add("active");
+    listButton.classList.remove("active");
 
-        gridButton.setAttribute("aria-pressed", "true");
-        listButton.setAttribute("aria-pressed", "false");
-    });
+    gridButton.setAttribute("aria-pressed", "true");
+    listButton.setAttribute("aria-pressed", "false");
+});
 
-    // Switch to list view.
-    listButton.addEventListener("click", () => {
-        membersContainer.classList.remove("members-grid");
-        membersContainer.classList.add("members-list");
+// Switch to list view.
+listButton.addEventListener("click", () => {
+    membersContainer.classList.remove("members-grid");
+    membersContainer.classList.add("members-list");
 
-        listButton.classList.add("active");
-        gridButton.classList.remove("active");
+    listButton.classList.add("active");
+    gridButton.classList.remove("active");
 
-        listButton.setAttribute("aria-pressed", "true");
-        gridButton.setAttribute("aria-pressed", "false");
-    });
-}
+    listButton.setAttribute("aria-pressed", "true");
+    gridButton.setAttribute("aria-pressed", "false");
+});
 
-// Mobile navigation.
-if (menuButton && mainNav) {
-    menuButton.addEventListener("click", () => {
-        const isOpen = mainNav.classList.toggle("open");
+// Mobile navigation menu.
+menuButton.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("open");
 
-        menuButton.setAttribute("aria-expanded", String(isOpen));
-        menuButton.setAttribute(
-            "aria-label",
-            isOpen ? "Close navigation menu" : "Open navigation menu"
-        );
-    });
-}
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+
+    menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+});
 
 // Load members when the page opens.
-if (membersContainer) {
-    getMembers();
-}
+getMembers();
