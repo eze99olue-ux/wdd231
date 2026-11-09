@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,16 +7,17 @@
 
     <title>Business Directory | Abuja Chamber of Commerce</title>
 
-    <meta name="description" content="Explore the Abuja Chamber of Commerce member directory and discover businesses, services, and opportunities in Abuja, Nigeria.">
+    <meta name="description" content="Explore the Abuja Chamber of Commerce business directory to discover local businesses, services, and opportunities in Abuja, Nigeria.">
     <meta name="author" content="Oluebube Eze">
     <meta name="theme-color" content="#173d5b">
 
     <!-- Open Graph Metadata -->
     <meta property="og:title" content="Business Directory | Abuja Chamber of Commerce">
-    <meta property="og:description" content="Discover businesses and services through the Abuja Chamber of Commerce directory.">
+    <meta property="og:description" content="Explore Abuja Chamber of Commerce members, discover local businesses, and connect with organisations driving economic growth in Abuja, Nigeria.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://eze99olue-ux.github.io/wdd231/chamber/directory.html">
     <meta property="og:image" content="https://eze99olue-ux.github.io/wdd231/chamber/images/chamber-logo.svg">
+    <meta property="og:image:alt" content="Abuja Chamber of Commerce logo">
 
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
@@ -26,12 +27,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- CSS Files -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
-    <!-- JavaScript -->
+    <!-- JavaScript Files -->
     <script src="scripts/directory.js" defer></script>
     <script src="scripts/date.js" defer></script>
 </head>
@@ -39,36 +40,44 @@
 <body>
     <header class="site-header">
         <div class="header-content">
+
             <a class="brand" href="index.html" aria-label="Abuja Chamber of Commerce home">
-                <img src="images/chamber-logo.svg"
-                     alt="Abuja Chamber of Commerce logo"
-                     width="60"
-                     height="60">
+                <img
+                    src="images/chamber-logo.svg"
+                    alt="Abuja Chamber of Commerce logo"
+                    width="60"
+                    height="60"
+                >
                 <span>
                     <strong>Abuja Chamber</strong>
                     <small>of Commerce</small>
                 </span>
             </a>
 
-            <button class="menu-toggle"
-                    id="menu-toggle"
-                    type="button"
-                    aria-label="Open navigation menu"
-                    aria-expanded="false"
-                    aria-controls="primary-navigation">
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+            >
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <nav class="primary-navigation"
-                 id="primary-navigation"
-                 aria-label="Main navigation">
+            <nav
+                class="primary-navigation"
+                id="primary-navigation"
+                aria-label="Main navigation"
+            >
                 <a href="index.html">Home</a>
                 <a href="discover.html">Discover</a>
                 <a href="directory.html" class="active" aria-current="page">Directory</a>
                 <a href="join.html">Join</a>
             </nav>
+
         </div>
     </header>
 
@@ -82,6 +91,7 @@
         </section>
 
         <section class="directory-section" aria-labelledby="directory-title">
+
             <div class="directory-header">
                 <div>
                     <h2 id="directory-title">Our Chamber Members</h2>
@@ -89,39 +99,61 @@
                 </div>
 
                 <div class="view-controls" aria-label="Choose directory display">
-                    <button type="button"
-                            id="grid-view"
-                            class="view-button active"
-                            aria-pressed="true">
+
+                    <button
+                        type="button"
+                        id="grid-view"
+                        class="view-button active"
+                        aria-pressed="true"
+                    >
                         <span aria-hidden="true">▦</span> Grid
                     </button>
 
-                    <button type="button"
-                            id="list-view"
-                            class="view-button"
-                            aria-pressed="false">
+                    <button
+                        type="button"
+                        id="list-view"
+                        class="view-button"
+                        aria-pressed="false"
+                    >
                         <span aria-hidden="true">☷</span> List
                     </button>
+
                 </div>
             </div>
 
-            <div id="members-container" class="members-grid" aria-live="polite">
+            <div
+                id="members-container"
+                class="members-grid"
+                aria-live="polite"
+                aria-busy="true"
+            >
                 <p class="loading-message">Loading chamber members...</p>
             </div>
+
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="footer-content">
+
             <div class="footer-contact">
                 <h2>Abuja Chamber of Commerce</h2>
                 <p>Promoting business growth and economic development in Abuja, Nigeria.</p>
-                <p>Email: <a href="mailto:info@abujachamber.example">info@abujachamber.example</a></p>
-                <p>Phone: <a href="tel:+2348000000000">+234 800 000 0000</a></p>
+
+                <p>
+                    Email:
+                    <a href="mailto:info@abujachamber.example">info@abujachamber.example</a>
+                </p>
+
+                <p>
+                    Phone:
+                    <a href="tel:+2348000000000">+234 800 000 0000</a>
+                </p>
             </div>
 
             <div class="footer-social">
                 <h2>Connect With Us</h2>
+
                 <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
                 <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -132,7 +164,9 @@
                 <p>Oluebube Eze | WDD231</p>
                 <p>Last Modified: <span id="last-modified"></span></p>
             </div>
+
         </div>
     </footer>
 </body>
 </html>
+```

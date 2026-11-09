@@ -4,7 +4,6 @@
    Abuja Chamber of Commerce
    ========================================= */
 
-/* Google Font fallback */
 :root {
     --primary-color: #173d5b;
     --secondary-color: #24577d;
@@ -42,10 +41,6 @@ a {
 button {
     font: inherit;
 }
-
-/* =========================================
-   HEADER AND NAVIGATION
-   ========================================= */
 
 .site-header {
     background-color: var(--white);

@@ -1,196 +1,172 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Oluebube Eze's WDD231 Course Home Page featuring web development and computer programming coursework.">
+    <title>Business Directory | Abuja Chamber of Commerce</title>
+
+    <meta name="description" content="Explore the Abuja Chamber of Commerce business directory to discover local businesses, services, and opportunities in Abuja, Nigeria.">
     <meta name="author" content="Oluebube Eze">
+    <meta name="theme-color" content="#173d5b">
 
-    <title>Oluebube Eze | WDD231 Course Home Page</title>
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Business Directory | Abuja Chamber of Commerce">
+    <meta property="og:description" content="Explore Abuja Chamber of Commerce members, discover local businesses, and connect with organisations driving economic growth in Abuja, Nigeria.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eze99olue-ux.github.io/wdd231/chamber/directory.html">
+    <meta property="og:image" content="https://eze99olue-ux.github.io/wdd231/chamber/images/chamber-logo.svg">
+    <meta property="og:image:alt" content="Abuja Chamber of Commerce logo">
 
-    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
-    <script src="scripts/navigation.js" defer></script>
+    <!-- JavaScript Files -->
+    <script src="scripts/directory.js" defer></script>
     <script src="scripts/date.js" defer></script>
-    <script src="scripts/courses.js" defer></script>
 </head>
 
 <body>
-
-    <header>
+    <header class="site-header">
         <div class="header-content">
-            <div class="brand">
-                <img src="images/logo.svg" alt="" width="45" height="45">
-                <span>Oluebube Eze</span>
-            </div>
+
+            <a class="brand" href="index.html" aria-label="Abuja Chamber of Commerce home">
+                <img
+                    src="images/chamber-logo.svg"
+                    alt="Abuja Chamber of Commerce logo"
+                    width="60"
+                    height="60"
+                >
+                <span>
+                    <strong>Abuja Chamber</strong>
+                    <small>of Commerce</small>
+                </span>
+            </a>
 
             <button
-                id="menu-button"
-                class="menu-button"
+                class="menu-toggle"
+                id="menu-toggle"
                 type="button"
                 aria-label="Open navigation menu"
-                aria-controls="primary-nav"
-                aria-expanded="false">
-
-                <span class="menu-icon"></span>
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-        </div>
 
-        <nav id="primary-nav" class="navigation">
-            <a href="index.html" class="active" aria-current="page">Home</a>
-            <a href="chamber/index.html">Chamber</a>
-            <a href="project/index.html">Final</a>
-        </nav>
+            <nav
+                class="primary-navigation"
+                id="primary-navigation"
+                aria-label="Main navigation"
+            >
+                <a href="index.html">Home</a>
+                <a href="discover.html">Discover</a>
+                <a href="directory.html" class="active" aria-current="page">Directory</a>
+                <a href="join.html">Join</a>
+            </nav>
+
+        </div>
     </header>
 
     <main>
-        <h1>Home</h1>
+        <section class="page-heading">
+            <div class="heading-content">
+                <p class="eyebrow">Connect. Discover. Grow.</p>
+                <h1>Business Directory</h1>
+                <p>Explore businesses and services that contribute to the growth of Abuja.</p>
+            </div>
+        </section>
 
-        <div class="home-grid">
+        <section class="directory-section" aria-labelledby="directory-title">
 
-            <!-- About Me Section -->
-            <section class="panel about-panel">
-                <h2>About Me</h2>
-
-                <div class="panel-content">
-                    <p>
-                        My name is Oluebube Eze. I am a student at
-                        BYU-Pathway Worldwide, where I am developing my
-                        knowledge and skills in web development and
-                        computer programming.
-                    </p>
-
-                    <p>
-                        I have a background in Business Education and
-                        Accounting. I enjoy learning new technologies,
-                        solving problems, and discovering how technology
-                        can make everyday tasks easier. My goal is to become
-                        a skilled web developer and continue growing in
-                        the technology field.
-                    </p>
+            <div class="directory-header">
+                <div>
+                    <h2 id="directory-title">Our Chamber Members</h2>
+                    <p>Discover businesses and connect with local organisations.</p>
                 </div>
-            </section>
 
-            <!-- Student Photo Section -->
-            <section class="panel photo-panel">
-                <h2>Student Photo</h2>
-
-                <div class="photo-container">
-                    <img
-                        src="images/eze.png"
-                        alt="Portrait of Oluebube Eze"
-                        class="student-photo"
-                        width="400"
-                        height="400">
-                </div>
-            </section>
-
-            <!-- Certificate Courses Section -->
-            <section class="panel certificate-panel">
-                <h2>Web Certificate Courses</h2>
-
-<div class="course-filters" role="group" aria-label="Course filters">
+                <div class="view-controls" aria-label="Choose directory display">
 
                     <button
                         type="button"
-                        class="filter-button active"
-                        data-filter="all"
-                        aria-pressed="true">
-                        All
+                        id="grid-view"
+                        class="view-button active"
+                        aria-pressed="true"
+                    >
+                        <span aria-hidden="true">▦</span> Grid
                     </button>
 
                     <button
                         type="button"
-                        class="filter-button"
-                        data-filter="CSE"
-                        aria-pressed="false">
-                        CSE
-                    </button>
-
-                    <button
-                        type="button"
-                        class="filter-button"
-                        data-filter="WDD"
-                        aria-pressed="false">
-                        WDD
+                        id="list-view"
+                        class="view-button"
+                        aria-pressed="false"
+                    >
+                        <span aria-hidden="true">☷</span> List
                     </button>
 
                 </div>
+            </div>
 
-                <div
-                    id="course-list"
-                    class="course-list"
-                    aria-live="polite">
-                    <!-- JavaScript generates course cards here -->
-                </div>
+            <div
+                id="members-container"
+                class="members-grid"
+                aria-live="polite"
+                aria-busy="true"
+            >
+                <p class="loading-message">Loading chamber members...</p>
+            </div>
 
-                <p class="credit-total">
-                    The total credits for courses listed is
-                    <strong id="total-credits">0</strong>
-                </p>
-
-                <div class="course-legend">
-
-                    <span class="legend-item">
-                        <span class="legend-box completed"></span>
-                        Completed
-                    </span>
-
-                    <span class="legend-item">
-                        <span class="legend-box not-completed"></span>
-                        Not Completed
-                    </span>
-
-                </div>
-            </section>
-
-        </div>
+        </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
+        <div class="footer-content">
 
-        <div class="social-links">
+            <div class="footer-contact">
+                <h2>Abuja Chamber of Commerce</h2>
+                <p>Promoting business growth and economic development in Abuja, Nigeria.</p>
 
-            <a
-                href="https://www.linkedin.com/in/ezeoluebube/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit my LinkedIn profile">
+                <p>
+                    Email:
+                    <a href="mailto:info@abujachamber.example">info@abujachamber.example</a>
+                </p>
 
-                <img src="images/linkedin.svg" alt="LinkedIn logo" width="30" height="30">
-            </a>
+                <p>
+                    Phone:
+                    <a href="tel:+2348000000000">+234 800 000 0000</a>
+                </p>
+            </div>
 
-            <a
-                href="https://github.com/eze99olue-ux"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit my GitHub profile">
+            <div class="footer-social">
+                <h2>Connect With Us</h2>
 
-                <img src="images/github.svg" alt="GitHub logo" width="30" height="30">
-            </a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+
+            <div class="footer-credit">
+                <p>&copy; <span id="current-year"></span> Abuja Chamber of Commerce</p>
+                <p>Oluebube Eze | WDD231</p>
+                <p>Last Modified: <span id="last-modified"></span></p>
+            </div>
 
         </div>
-
-        <p>
-            &copy; <span id="currentyear"></span>
-            Oluebube Eze | Nigeria
-        </p>
-
-        <p class="last-modified">
-            Last Modification:
-            <span id="lastModified"></span>
-        </p>
-
     </footer>
-
 </body>
 </html>
+```
