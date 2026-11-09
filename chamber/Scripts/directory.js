@@ -7,7 +7,6 @@ const listButton = document.querySelector("#list-view");
 const menuButton = document.querySelector("#menu-toggle");
 const mainNav = document.querySelector("#primary-navigation");
 
-// Return membership level as readable text
 function getMembershipName(level) {
     if (level === 3) {
         return "Gold Member";
@@ -20,7 +19,6 @@ function getMembershipName(level) {
     return "Member";
 }
 
-// Create an individual member card
 function createMemberCard(member) {
     const card = document.createElement("article");
     card.classList.add("member-card");
@@ -74,7 +72,6 @@ function createMemberCard(member) {
     return card;
 }
 
-// Display all members
 function displayMembers(members) {
     membersContainer.innerHTML = "";
 
@@ -86,7 +83,6 @@ function displayMembers(members) {
     membersContainer.setAttribute("aria-busy", "false");
 }
 
-// Fetch members from JSON using async/await
 async function getMembers() {
     try {
         const response = await fetch("data/members.json");
@@ -98,22 +94,25 @@ async function getMembers() {
         const members = await response.json();
 
         displayMembers(members);
+
     } catch (error) {
         membersContainer.innerHTML = "";
 
         const message = document.createElement("p");
+
         message.classList.add("error-message");
+
         message.textContent =
             "Sorry, chamber members could not be loaded. Please try again later.";
 
         membersContainer.appendChild(message);
+
         membersContainer.setAttribute("aria-busy", "false");
 
         console.error("Member loading error:", error);
     }
 }
 
-// Switch to grid view
 gridButton.addEventListener("click", () => {
     membersContainer.classList.remove("members-list");
     membersContainer.classList.add("members-grid");
@@ -125,7 +124,6 @@ gridButton.addEventListener("click", () => {
     listButton.setAttribute("aria-pressed", "false");
 });
 
-// Switch to list view
 listButton.addEventListener("click", () => {
     membersContainer.classList.remove("members-grid");
     membersContainer.classList.add("members-list");
@@ -137,7 +135,6 @@ listButton.addEventListener("click", () => {
     gridButton.setAttribute("aria-pressed", "false");
 });
 
-// Mobile navigation toggle
 menuButton.addEventListener("click", () => {
     const isOpen = mainNav.classList.toggle("open");
 
@@ -149,5 +146,4 @@ menuButton.addEventListener("click", () => {
     );
 });
 
-// Load members when the page opens
 getMembers();
