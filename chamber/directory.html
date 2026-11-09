@@ -1,16 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Explore the Abuja Chamber of Commerce member directory and connect with local businesses, services, and organizations.">
+    <meta name="description" content="Explore businesses and organizations that are members of the Abuja Chamber of Commerce. Find member contact information, services, and websites.">
     <meta name="author" content="Oluebube Eze">
-    <meta name="theme-color" content="#173d5b">
 
     <meta property="og:title" content="Abuja Chamber of Commerce | Member Directory">
-    <meta property="og:description" content="Discover businesses and organizations in the Abuja Chamber of Commerce directory and connect with the local business community.">
+    <meta property="og:description" content="Discover businesses and organizations in the Abuja Chamber of Commerce member directory.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://eze99olue-ux.github.io/wdd231/chamber/directory.html">
     <meta property="og:image" content="https://eze99olue-ux.github.io/wdd231/chamber/images/chamber-logo.svg">
@@ -32,14 +30,14 @@
 </head>
 
 <body>
-    <header class="site-header">
+    <header>
         <div class="header-content">
             <a class="brand" href="index.html" aria-label="Abuja Chamber of Commerce home">
-                <img src="images/chamber-logo.svg"
-                     alt="Abuja Chamber of Commerce logo"
-                     width="60"
-                     height="60">
-                <span>Abuja Chamber of Commerce</span>
+                <img src="images/chamber-logo.svg" alt="Abuja Chamber of Commerce logo">
+                <span>
+                    <strong>Abuja Chamber</strong>
+                    <small>of Commerce</small>
+                </span>
             </a>
 
             <button
@@ -49,7 +47,9 @@
                 aria-label="Open navigation menu"
                 aria-expanded="false"
                 aria-controls="primary-navigation">
-                <span aria-hidden="true">☰</span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
             <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
@@ -61,28 +61,32 @@
         </div>
     </header>
 
-    <main class="container">
-        <section class="directory-section" aria-labelledby="page-title">
+    <main>
+        <section class="directory-section">
             <div class="directory-header">
                 <div>
-                    <h1 id="page-title">Member Directory</h1>
-                    <p>Discover and connect with businesses in our chamber community.</p>
+                    <p class="eyebrow">Connect. Discover. Grow.</p>
+                    <h1>Member Directory</h1>
+                    <p class="intro-text">
+                        Explore businesses and organizations that are part of the
+                        Abuja Chamber of Commerce community.
+                    </p>
                 </div>
 
                 <div class="view-controls" aria-label="Directory display options">
                     <button
-                        type="button"
                         id="grid-view"
                         class="view-button active"
+                        type="button"
                         aria-label="Display members in grid view"
                         aria-pressed="true">
                         Grid View
                     </button>
 
                     <button
-                        type="button"
                         id="list-view"
                         class="view-button"
+                        type="button"
                         aria-label="Display members in list view"
                         aria-pressed="false">
                         List View
@@ -90,44 +94,38 @@
                 </div>
             </div>
 
+            <p id="member-count" class="member-count" aria-live="polite">
+                Loading chamber members...
+            </p>
+
             <div
                 id="members-container"
-                class="members-grid"
+                class="members-container members-grid"
                 aria-live="polite"
                 aria-busy="true">
-                <p>Loading chamber members...</p>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer>
         <div class="footer-content">
             <div class="footer-contact">
                 <h2>Abuja Chamber of Commerce</h2>
-                <p>Promoting business growth and development in Abuja, Nigeria.</p>
-                <address>Abuja, Federal Capital Territory, Nigeria</address>
-                <p>Email: Replace with the chamber's contact email</p>
-                <p>Phone: Replace with the chamber's contact number</p>
+                <p>Abuja, Federal Capital Territory, Nigeria</p>
+                <p>Email: info@abujachamber.example</p>
+                <p>Phone: +234 800 000 0000</p>
             </div>
 
             <div class="footer-social">
                 <h2>Connect With Us</h2>
-                <a href="https://www.facebook.com/"
-                   target="_blank"
-                   rel="noopener noreferrer">Facebook</a>
-
-                <a href="https://www.linkedin.com/"
-                   target="_blank"
-                   rel="noopener noreferrer">LinkedIn</a>
-
-                <a href="https://www.instagram.com/"
-                   target="_blank"
-                   rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
 
             <div class="footer-credit">
-                <p>WDD231 Web Frontend Development I</p>
-                <p>Created by Oluebube Eze</p>
+                <p>Oluebube Eze</p>
+                <p>WDD231 Web Frontend Development</p>
                 <p>&copy; <span id="current-year"></span> Abuja Chamber of Commerce</p>
                 <p>Last Modified: <span id="last-modified"></span></p>
             </div>

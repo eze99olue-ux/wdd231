@@ -1,89 +1,362 @@
-
-/* =========================================
-   LARGE SCREEN STYLES
-   Abuja Chamber of Commerce
-   ========================================= */
-
-@media screen and (min-width: 700px) {
-
-    /* Header and navigation */
-    .header-content {
-        flex-wrap: nowrap;
-        min-height: 90px;
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-
-    .primary-navigation {
-        display: flex;
-        width: auto;
-        flex-direction: row;
-        align-items: center;
-        margin-top: 0;
-        gap: 0.3rem;
-    }
-
-    .primary-navigation a {
-        padding: 0.65rem 0.9rem;
-        border-top: none;
-        border-radius: 4px;
-    }
-
-    /* Directory heading */
-    .directory-header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: end;
-    }
-
-    /* Member grid */
-    .members-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    /* Member list */
-    .members-list .member-card {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        align-items: center;
-        text-align: left;
-        gap: 0.5rem 1.5rem;
-    }
-
-    .members-list .member-details {
-        display: contents;
-    }
-
-    .members-list .member-card h3 {
-        grid-column: 1 / -1;
-    }
-
-    /* Footer */
-    .footer-content {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1.5fr;
-        gap: 2rem;
-        align-items: start;
-    }
-
-    .footer-credit {
-        border-top: none;
-        border-left: 1px solid rgba(255, 255, 255, 0.35);
-        padding-top: 0;
-        padding-left: 1.5rem;
-    }
+:root {
+    --primary-color: #173d5b;
+    --secondary-color: #24577d;
+    --accent-color: #f4a261;
+    --background-color: #f5f7fa;
+    --white: #ffffff;
+    --text-color: #252525;
+    --muted-color: #555555;
+    --border-color: #d9e0e7;
+    --shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
 
-@media screen and (min-width: 1000px) {
+* {
+    box-sizing: border-box;
+}
 
-    /* Three-column directory */
+body {
+    margin: 0;
+    font-family: "Nunito Sans", Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--secondary-color);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+/* HEADER */
+
+header {
+    background-color: var(--white);
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.brand img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.brand strong,
+.brand small {
+    display: block;
+}
+
+.brand strong {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.brand small {
+    font-size: 0.85rem;
+}
+
+/* MOBILE NAVIGATION */
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.primary-navigation {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 0.8rem;
+}
+
+.primary-navigation.open {
+    display: flex;
+}
+
+.primary-navigation a {
+    padding: 0.75rem 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    border-top: 1px solid var(--border-color);
+}
+
+.primary-navigation a:hover,
+.primary-navigation a.active {
+    color: var(--secondary-color);
+    background-color: #eaf0f5;
+}
+
+/* MAIN DIRECTORY */
+
+.directory-section {
+    max-width: 1200px;
+    min-height: 65vh;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+}
+
+.directory-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+    margin: 0 0 0.3rem;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.intro-text {
+    max-width: 650px;
+    color: var(--muted-color);
+}
+
+.view-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.view-button {
+    padding: 0.65rem 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    background-color: var(--white);
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.view-button:hover,
+.view-button.active {
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+
+.member-count {
+    margin: 0 0 1rem;
+    color: var(--muted-color);
+    font-weight: 700;
+}
+
+/* GRID VIEW */
+
+.members-container {
+    width: 100%;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+.member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.3rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.member-image {
+    width: 110px;
+    height: 100px;
+    margin-bottom: 0.8rem;
+    object-fit: contain;
+}
+
+.member-details {
+    width: 100%;
+}
+
+.member-details h2 {
+    margin: 0 0 0.6rem;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.member-details p {
+    margin: 0.45rem 0;
+    overflow-wrap: anywhere;
+}
+
+.member-details a {
+    display: inline-block;
+    margin-top: 0.3rem;
+    font-weight: 700;
+}
+
+.membership-level {
+    display: inline-block;
+    margin-top: 0.8rem !important;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    color: var(--primary-color);
+    background-color: #eaf0f5;
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+/* LIST VIEW */
+
+.members-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.members-list .member-card {
+    display: block;
+    padding: 1rem;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left;
+}
+
+.members-list .member-card:nth-child(even) {
+    background-color: #eaf0f5;
+}
+
+.members-list .member-image {
+    display: none;
+}
+
+.members-list .member-details h2 {
+    font-size: 1.1rem;
+}
+
+.members-list .membership-level {
+    margin-top: 0.4rem !important;
+}
+
+/* ERROR MESSAGE */
+
+.error-message {
+    padding: 1rem;
+    border: 1px solid #a52a2a;
+    border-radius: 5px;
+    color: #7a1d1d;
+    background-color: #fff0f0;
+}
+
+/* FOOTER */
+
+footer {
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+footer h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+footer p {
+    margin: 0.4rem 0;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-social a {
+    margin: 0.2rem 0;
+    color: var(--white);
+}
+
+.footer-social a:hover {
+    color: var(--accent-color);
+}
+
+.footer-credit {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+    font-size: 0.9rem;
+}
+
+/* SMALL SCREEN SAFETY */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (min-width: 480px) {
     .members-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .page-heading {
-        padding: 4.5rem 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }

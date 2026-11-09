@@ -1,66 +1,65 @@
-
 [
     {
-        "name": "Capital Crest Technologies",
-        "address": "Plot 18, Garki District, Abuja, Nigeria",
-        "phone": "+234 801 234 5678",
+        "name": "Abuja Business Solutions",
+        "address": "Central Business District, Abuja, Nigeria",
+        "phone": "+234 801 234 5671",
         "website": "https://example.com",
         "image": "business.svg",
         "membershipLevel": 3,
-        "description": "A technology company providing digital solutions and IT services."
+        "description": "A business support company providing administrative, consulting, and professional services."
     },
     {
-        "name": "Savannah Foods Limited",
-        "address": "12 Aminu Kano Crescent, Wuse 2, Abuja, Nigeria",
-        "phone": "+234 802 345 6789",
+        "name": "Capital City Technologies",
+        "address": "Wuse 2, Abuja, Nigeria",
+        "phone": "+234 801 234 5672",
         "website": "https://example.com",
         "image": "business.svg",
         "membershipLevel": 2,
-        "description": "A food and beverage business offering quality food products and catering services."
+        "description": "A technology company offering digital solutions, software support, and IT services."
     },
     {
-        "name": "MetroBuild Construction",
-        "address": "24 Adetokunbo Ademola Crescent, Wuse 2, Abuja, Nigeria",
-        "phone": "+234 803 456 7890",
-        "website": "https://example.com",
-        "image": "business.svg",
-        "membershipLevel": 3,
-        "description": "A construction and property development company serving residential and commercial clients."
-    },
-    {
-        "name": "GreenRoute Logistics",
-        "address": "8 Airport Road, Lugbe, Abuja, Nigeria",
-        "phone": "+234 804 567 8901",
+        "name": "Greenfield Agricultural Ventures",
+        "address": "Gwarinpa, Abuja, Nigeria",
+        "phone": "+234 801 234 5673",
         "website": "https://example.com",
         "image": "business.svg",
         "membershipLevel": 1,
-        "description": "A logistics company providing delivery, transportation, and supply chain services."
+        "description": "An agricultural enterprise focused on food production, farm supplies, and distribution."
     },
     {
-        "name": "CedarPoint Consulting",
-        "address": "5 Lake Chad Crescent, Maitama, Abuja, Nigeria",
-        "phone": "+234 805 678 9012",
+        "name": "Prime Events and Catering",
+        "address": "Jabi, Abuja, Nigeria",
+        "phone": "+234 801 234 5674",
+        "website": "https://example.com",
+        "image": "business.svg",
+        "membershipLevel": 3,
+        "description": "An event management and catering business serving corporate and private clients."
+    },
+    {
+        "name": "Metro Logistics Services",
+        "address": "Utako, Abuja, Nigeria",
+        "phone": "+234 801 234 5675",
         "website": "https://example.com",
         "image": "business.svg",
         "membershipLevel": 2,
-        "description": "A business consulting firm supporting organizations with strategy and operations."
+        "description": "A logistics company providing delivery, transportation, and supply-chain services."
     },
     {
-        "name": "Horizon Health Services",
-        "address": "16 Yakubu Gowon Crescent, Asokoro, Abuja, Nigeria",
-        "phone": "+234 806 789 0123",
+        "name": "Royal Homes Properties",
+        "address": "Asokoro, Abuja, Nigeria",
+        "phone": "+234 801 234 5676",
         "website": "https://example.com",
         "image": "business.svg",
         "membershipLevel": 1,
-        "description": "A healthcare service provider focused on accessible and dependable care."
+        "description": "A property business offering real estate marketing, sales, and property management."
     },
     {
-        "name": "PrimeEdge Financial Services",
-        "address": "31 Herbert Macaulay Way, Central Area, Abuja, Nigeria",
-        "phone": "+234 807 890 1234",
+        "name": "Wellcare Health Services",
+        "address": "Garki, Abuja, Nigeria",
+        "phone": "+234 801 234 5677",
         "website": "https://example.com",
         "image": "business.svg",
-        "membershipLevel": 3,
-        "description": "A financial services business offering financial guidance and business support."
+        "membershipLevel": 2,
+        "description": "A healthcare service provider focused on wellness support and community health services."
     }
 ]

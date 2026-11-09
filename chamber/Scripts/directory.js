@@ -1,4 +1,5 @@
 const membersContainer = document.querySelector("#members-container");
+const memberCount = document.querySelector("#member-count");
 
 const gridButton = document.querySelector("#grid-view");
 const listButton = document.querySelector("#list-view");
@@ -6,12 +7,20 @@ const listButton = document.querySelector("#list-view");
 const menuButton = document.querySelector("#menu-toggle");
 const mainNav = document.querySelector("#primary-navigation");
 
+// Return the correct membership name.
 function getMembershipName(level) {
-    if (level === 3) return "Gold Member";
-    if (level === 2) return "Silver Member";
+    if (Number(level) === 3) {
+        return "Gold Member";
+    }
+
+    if (Number(level) === 2) {
+        return "Silver Member";
+    }
+
     return "Member";
 }
 
+// Create one member card.
 function createMemberCard(member) {
     const card = document.createElement("article");
     card.classList.add("member-card");
@@ -25,7 +34,7 @@ function createMemberCard(member) {
     const details = document.createElement("div");
     details.classList.add("member-details");
 
-    const name = document.createElement("h3");
+    const name = document.createElement("h2");
     name.textContent = member.name;
 
     const description = document.createElement("p");
@@ -38,14 +47,14 @@ function createMemberCard(member) {
     phone.textContent = `Phone: ${member.phone}`;
 
     const website = document.createElement("p");
-    const link = document.createElement("a");
+    const websiteLink = document.createElement("a");
 
-    link.href = member.website;
-    link.textContent = "Visit Website";
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
+    websiteLink.href = member.website;
+    websiteLink.textContent = "Visit Website";
+    websiteLink.target = "_blank";
+    websiteLink.rel = "noopener noreferrer";
 
-    website.appendChild(link);
+    website.appendChild(websiteLink);
 
     const membership = document.createElement("p");
     membership.classList.add("membership-level");
@@ -65,71 +74,97 @@ function createMemberCard(member) {
     return card;
 }
 
+// Display all members.
 function displayMembers(members) {
     membersContainer.innerHTML = "";
 
     members.forEach((member) => {
-        membersContainer.appendChild(createMemberCard(member));
+        const card = createMemberCard(member);
+        membersContainer.appendChild(card);
     });
+
+    if (memberCount) {
+        memberCount.textContent = `Showing ${members.length} chamber members`;
+    }
 
     membersContainer.setAttribute("aria-busy", "false");
 }
 
+// Fetch member information from the JSON file.
 async function getMembers() {
     try {
         const response = await fetch("data/members.json");
 
         if (!response.ok) {
-            throw new Error("Could not load members.");
+            throw new Error(`HTTP error: ${response.status}`);
         }
 
         const members = await response.json();
-        displayMembers(members);
 
+        if (!Array.isArray(members) || members.length === 0) {
+            throw new Error("No member records were found.");
+        }
+
+        displayMembers(members);
     } catch (error) {
         membersContainer.innerHTML = "";
 
         const message = document.createElement("p");
+        message.classList.add("error-message");
         message.textContent =
-            "Sorry, chamber members could not be loaded.";
+            "Sorry, chamber members could not be loaded. Please try again later.";
 
         membersContainer.appendChild(message);
         membersContainer.setAttribute("aria-busy", "false");
 
-        console.error(error);
+        if (memberCount) {
+            memberCount.textContent = "Member directory unavailable";
+        }
+
+        console.error("Member loading error:", error);
     }
 }
 
-gridButton.addEventListener("click", () => {
-    membersContainer.classList.remove("members-list");
-    membersContainer.classList.add("members-grid");
+// Switch to grid view.
+if (gridButton && listButton && membersContainer) {
+    gridButton.addEventListener("click", () => {
+        membersContainer.classList.remove("members-list");
+        membersContainer.classList.add("members-grid");
 
-    gridButton.classList.add("active");
-    listButton.classList.remove("active");
+        gridButton.classList.add("active");
+        listButton.classList.remove("active");
 
-    gridButton.setAttribute("aria-pressed", "true");
-    listButton.setAttribute("aria-pressed", "false");
-});
+        gridButton.setAttribute("aria-pressed", "true");
+        listButton.setAttribute("aria-pressed", "false");
+    });
 
-listButton.addEventListener("click", () => {
-    membersContainer.classList.remove("members-grid");
-    membersContainer.classList.add("members-list");
+    // Switch to list view.
+    listButton.addEventListener("click", () => {
+        membersContainer.classList.remove("members-grid");
+        membersContainer.classList.add("members-list");
 
-    listButton.classList.add("active");
-    gridButton.classList.remove("active");
+        listButton.classList.add("active");
+        gridButton.classList.remove("active");
 
-    listButton.setAttribute("aria-pressed", "true");
-    gridButton.setAttribute("aria-pressed", "false");
-});
+        listButton.setAttribute("aria-pressed", "true");
+        gridButton.setAttribute("aria-pressed", "false");
+    });
+}
 
-menuButton.addEventListener("click", () => {
-    const isOpen = mainNav.classList.toggle("open");
+// Mobile navigation.
+if (menuButton && mainNav) {
+    menuButton.addEventListener("click", () => {
+        const isOpen = mainNav.classList.toggle("open");
 
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-    menuButton.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
-    );
-});
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+    });
+}
 
-getMembers();
+// Load members when the page opens.
+if (membersContainer) {
+    getMembers();
+}
