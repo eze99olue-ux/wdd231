@@ -1,4 +1,3 @@
-
 const currentYear = document.querySelector("#current-year");
 const lastModified = document.querySelector("#last-modified");
 
