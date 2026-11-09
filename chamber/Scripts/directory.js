@@ -5,9 +5,10 @@ const memberCount = document.querySelector("#member-count");
 const gridButton = document.querySelector("#grid-view");
 const listButton = document.querySelector("#list-view");
 
-const menuButton = document.querySelector("#menu-button");
-const mainNav = document.querySelector("#main-nav");
+const menuButton = document.querySelector("#menu-toggle");
+const mainNav = document.querySelector("#primary-navigation");
 
+// Return the membership name and CSS class.
 function getMembershipName(level) {
     if (level === 3) {
         return {
@@ -29,6 +30,7 @@ function getMembershipName(level) {
     };
 }
 
+// Create an individual business card.
 function createMemberCard(member) {
     const card = document.createElement("article");
     card.className = "member-card";
@@ -61,7 +63,9 @@ function createMemberCard(member) {
     phoneLabel.textContent = "Phone: ";
     phone.append(phoneLabel, document.createTextNode(member.phone));
 
-    const membership = getMembershipName(Number(member.membershipLevel));
+    const membership = getMembershipName(
+        Number(member.membershipLevel)
+    );
 
     const membershipBadge = document.createElement("span");
     membershipBadge.className = `membership ${membership.className}`;
@@ -88,13 +92,22 @@ function createMemberCard(member) {
     return card;
 }
 
+// Display all business members.
 function displayMembers(members) {
     membersContainer.innerHTML = "";
 
     if (!Array.isArray(members) || members.length === 0) {
-        membersContainer.innerHTML =
-            '<p class="error-message">No business members are currently available.</p>';
-        memberCount.textContent = "No members found.";
+        const message = document.createElement("p");
+        message.className = "error-message";
+        message.textContent =
+            "No business members are currently available.";
+
+        membersContainer.appendChild(message);
+
+        if (memberCount) {
+            memberCount.textContent = "No members found.";
+        }
+
         return;
     }
 
@@ -106,9 +119,15 @@ function displayMembers(members) {
 
     membersContainer.appendChild(fragment);
 
-    memberCount.textContent = `Showing ${members.length} business members`;
+    if (memberCount) {
+        memberCount.textContent =
+            `Showing ${members.length} business members`;
+    }
+
+    membersContainer.setAttribute("aria-busy", "false");
 }
 
+// Switch between grid and list layouts.
 function setView(view) {
     const isGrid = view === "grid";
 
@@ -122,27 +141,41 @@ function setView(view) {
     listButton.setAttribute("aria-pressed", String(!isGrid));
 }
 
+// Fetch business members from the JSON file.
 async function loadMembers() {
     try {
         const response = await fetch("data/members.json");
 
         if (!response.ok) {
-            throw new Error(`Unable to load members: ${response.status}`);
+            throw new Error(
+                `Unable to load members: ${response.status}`
+            );
         }
 
         const members = await response.json();
+
         displayMembers(members);
 
     } catch (error) {
         console.error("Error loading business members:", error);
 
-        membersContainer.innerHTML =
-            '<p class="error-message">We could not load the business directory. Please try again later.</p>';
+        membersContainer.innerHTML = "";
 
-        memberCount.textContent = "Directory unavailable.";
+        const message = document.createElement("p");
+        message.className = "error-message";
+        message.textContent =
+            "We could not load the business directory. Please try again later.";
+
+        membersContainer.appendChild(message);
+        membersContainer.setAttribute("aria-busy", "false");
+
+        if (memberCount) {
+            memberCount.textContent = "Directory unavailable.";
+        }
     }
 }
 
+// Grid and list button events.
 gridButton.addEventListener("click", () => {
     setView("grid");
 });
@@ -151,10 +184,13 @@ listButton.addEventListener("click", () => {
     setView("list");
 });
 
+// Mobile navigation menu.
 menuButton.addEventListener("click", () => {
-    const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+    const isExpanded =
+        menuButton.getAttribute("aria-expanded") === "true";
 
     menuButton.setAttribute("aria-expanded", String(!isExpanded));
+
     menuButton.setAttribute(
         "aria-label",
         isExpanded ? "Open navigation menu" : "Close navigation menu"
@@ -163,4 +199,5 @@ menuButton.addEventListener("click", () => {
     mainNav.classList.toggle("open");
 });
 
+// Load members when the page opens.
 loadMembers();
