@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Welcome to Abuja Chamber of Commerce. Discover local businesses, upcoming events, business opportunities and economic development in Abuja, Nigeria.">
+
+    <meta name="author" content="Oluebube Eze">
+    <meta name="theme-color" content="#173d5b">
+
+    <meta property="og:title"
+        content="Abuja Chamber of Commerce | Home">
+
+    <meta property="og:description"
+        content="Connect with businesses, discover opportunities and explore the Abuja business community.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url"
+        content="https://eze99olue-ux.github.io/wdd231/chamber/index.html">
+
+    <meta property="og:image"
+        content="https://eze99olue-ux.github.io/wdd231/chamber/images/chamber-logo.svg">
+
+    <title>Home | Abuja Chamber of Commerce</title>
+
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/home.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-content">
+
+            <a class="brand" href="index.html"
+                aria-label="Abuja Chamber of Commerce home">
+
+                <img src="images/chamber-logo.svg"
+                    alt="Abuja Chamber of Commerce logo"
+                    width="60" height="60">
+
+                <span>Abuja Chamber of Commerce</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="primary-navigation">
+
+                <span aria-hidden="true">☰</span>
+            </button>
+
+            <nav class="primary-navigation"
+                id="primary-navigation"
+                aria-label="Main navigation">
+
+                <a href="index.html"
+                    class="active"
+                    aria-current="page">Home</a>
+
+                <a href="discover.html">Discover</a>
+
+                <a href="directory.html">Directory</a>
+
+                <a href="join.html">Join</a>
+
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" aria-labelledby="hero-title">
+
+            <img
+                class="hero-image"
+                src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1400&q=60"
+                alt="Modern business environment representing commerce and economic development"
+                width="1400"
+                height="700"
+                fetchpriority="high">
+
+            <div class="hero-overlay">
+                <div class="hero-content">
+
+                    <p class="hero-tagline">
+                        Connecting Businesses. Building Opportunities.
+                    </p>
+
+                    <h1 id="hero-title">
+                        Welcome to Abuja Chamber of Commerce
+                    </h1>
+
+                    <p>
+                        Supporting businesses, encouraging partnerships
+                        and creating opportunities for economic growth
+                        across Abuja.
+                    </p>
+
+                    <a href="join.html" class="cta-button">
+                        Join the Chamber
+                    </a>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- WELCOME SECTION -->
+        <section class="welcome-section section-container">
+
+            <div class="welcome-text">
+
+                <p class="section-label">ABOUT OUR CHAMBER</p>
+
+                <h2>Growing Together, Succeeding Together</h2>
+
+                <p>
+                    Abuja is a growing centre for commerce,
+                    innovation and entrepreneurship. The Abuja
+                    Chamber of Commerce brings businesses together
+                    to create meaningful connections, encourage
+                    investment and promote sustainable economic
+                    development.
+                </p>
+
+                <p>
+                    Whether you are an established organization,
+                    a small business owner or an emerging
+                    entrepreneur, our chamber provides opportunities
+                    to connect, learn and grow.
+                </p>
+
+                <a href="directory.html" class="text-link">
+                    Explore Our Business Directory →
+                </a>
+
+            </div>
+
+            <div class="welcome-highlight">
+
+                <div class="highlight-icon" aria-hidden="true">🤝</div>
+
+                <h3>Stronger Business Connections</h3>
+
+                <p>
+                    Building relationships that create opportunities
+                    for businesses and communities.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- CURRENT EVENTS -->
+        <section class="events-section">
+
+            <div class="section-container">
+
+                <p class="section-label">WHAT'S HAPPENING</p>
+
+                <h2>Upcoming Events</h2>
+
+                <div class="events-grid">
+
+                    <article class="event-card">
+
+                        <div class="event-icon" aria-hidden="true">
+                            📊
+                        </div>
+
+                        <div>
+                            <span class="event-category">
+                                Business Networking
+                            </span>
+
+                            <h3>Abuja Business Networking Forum</h3>
+
+                            <p>
+                                Connect with entrepreneurs, business
+                                leaders and professionals from
+                                different industries.
+                            </p>
+
+                            <span class="event-status">
+                                Event details coming soon
+                            </span>
+                        </div>
+
+                    </article>
+
+                    <article class="event-card">
+
+                        <div class="event-icon" aria-hidden="true">
+                            💼
+                        </div>
+
+                        <div>
+                            <span class="event-category">
+                                Business Development
+                            </span>
+
+                            <h3>
+                                Entrepreneurship and Investment Workshop
+                            </h3>
+
+                            <p>
+                                Discover business development
+                                strategies, investment opportunities
+                                and practical entrepreneurship insights.
+                            </p>
+
+                            <span class="event-status">
+                                Event details coming soon
+                            </span>
+                        </div>
+
+                    </article>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- WEATHER -->
+        <section class="weather-section section-container">
+
+            <div class="weather-heading">
+
+                <p class="section-label">ABUJA, NIGERIA</p>
+
+                <h2>Weather Information</h2>
+
+                <p>
+                    Stay informed about current weather conditions
+                    and the upcoming forecast in Abuja.
+                </p>
+
+            </div>
+
+            <div class="weather-grid">
+
+                <article class="weather-card">
+
+                    <h3>Current Weather</h3>
+
+                    <div id="current-weather"
+                        aria-live="polite"
+                        aria-busy="true">
+
+                        <p>Loading current weather...</p>
+
+                    </div>
+
+                </article>
+
+                <article class="weather-card">
+
+                    <h3>Three-Day Forecast</h3>
+
+                    <div id="weather-forecast"
+                        aria-live="polite"
+                        aria-busy="true">
+
+                        <p>Loading weather forecast...</p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p class="weather-credit">
+                Weather data provided by OpenWeatherMap.
+            </p>
+
+        </section>
+
+        <!-- COMPANY SPOTLIGHTS -->
+        <section class="spotlights-section">
+
+            <div class="section-container">
+
+                <div class="spotlights-heading">
+
+                    <div>
+                        <p class="section-label">OUR MEMBERS</p>
+
+                        <h2>Business Spotlights</h2>
+
+                        <p>
+                            Discover some of the businesses
+                            contributing to the Abuja business community.
+                        </p>
+                    </div>
+
+                    <a href="directory.html" class="text-link">
+                        View All Members →
+                    </a>
+
+                </div>
+
+                <div id="spotlight-container"
+                    class="spotlight-grid"
+                    aria-live="polite"
+                    aria-busy="true">
+
+                    <p class="loading-message">
+                        Loading featured businesses...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- JOIN CALL TO ACTION -->
+        <section class="join-section">
+
+            <div class="section-container join-content">
+
+                <div>
+                    <p class="section-label">GROW WITH US</p>
+
+                    <h2>Take Your Business to the Next Level</h2>
+
+                    <p>
+                        Become part of a business community that
+                        encourages collaboration, supports growth
+                        and creates opportunities for success.
+                    </p>
+                </div>
+
+                <a href="join.html" class="cta-button join-button">
+                    Become a Member
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <div class="footer-contact">
+
+                <h2>Abuja Chamber of Commerce</h2>
+
+                <p>
+                    Promoting business growth and development
+                    in Abuja, Nigeria.
+                </p>
+
+                <address>
+                    Abuja, Federal Capital Territory, Nigeria
+                </address>
+
+                <p>
+                    Email: Replace with the chamber's contact email
+                </p>
+
+                <p>
+                    Phone: Replace with the chamber's contact number
+                </p>
+
+            </div>
+
+            <div class="footer-social">
+
+                <h2>Connect With Us</h2>
+
+                <a href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Facebook
+                </a>
+
+                <a href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+
+                <a href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Instagram
+                </a>
+
+            </div>
+
+            <div class="footer-credit">
+
+                <p>WDD231 Web Frontend Development I</p>
+
+                <p>Created by Oluebube Eze</p>
+
+                <p>
+                    &copy; <span id="current-year"></span>
+                    Abuja Chamber of Commerce
+                </p>
+
+                <p>
+                    Last Modified:
+                    <span id="last-modified"></span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

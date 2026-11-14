@@ -360,3 +360,468 @@ body {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
+
+
+/* =========================================
+   ABUJA CHAMBER OF COMMERCE
+   SMALL.CSS - MOBILE FIRST
+   WDD231 WEEK 03
+========================================= */
+
+/* GENERAL HOME PAGE STYLES */
+
+.section-container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #f4a261;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    position: relative;
+    min-height: 420px;
+    overflow: hidden;
+    background: #173d5b;
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        90deg,
+        rgba(23, 61, 91, 0.94),
+        rgba(23, 61, 91, 0.35)
+    );
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.hero-tagline {
+    color: #ffd19e;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-content h1 {
+    max-width: 650px;
+    font-size: 2.1rem;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.hero-content p {
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+/* CALL TO ACTION BUTTON */
+
+.cta-button {
+    display: inline-block;
+    background: #ffd19e;
+    color: #173d5b;
+    padding: 14px 25px;
+    margin-top: 18px;
+    border-radius: 5px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background: #ffffff;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.section-label {
+    color: #24577d;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.welcome-section h2,
+.events-section h2,
+.weather-section h2,
+.spotlights-section h2,
+.join-section h2 {
+    color: #173d5b;
+    font-size: 1.8rem;
+}
+
+/* =========================================
+   WELCOME SECTION
+========================================= */
+
+.welcome-section {
+    padding: 55px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+}
+
+.welcome-text p,
+.welcome-highlight p {
+    line-height: 1.8;
+}
+
+.welcome-highlight {
+    background: #e8f0f7;
+    border-left: 5px solid #f4a261;
+    padding: 25px;
+    border-radius: 6px;
+}
+
+.highlight-icon {
+    font-size: 2.5rem;
+}
+
+.text-link {
+    display: inline-block;
+    color: #174b70;
+    font-weight: 800;
+    margin-top: 12px;
+    text-decoration: none;
+}
+
+.text-link:hover,
+.text-link:focus {
+    text-decoration: underline;
+}
+
+/* =========================================
+   CURRENT EVENTS
+========================================= */
+
+.events-section {
+    background: #f2f5f8;
+    padding: 50px 0;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+}
+
+.event-card {
+    background: #ffffff;
+    padding: 25px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    border-radius: 7px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.event-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.event-card h3 {
+    color: #173d5b;
+}
+
+.event-card p {
+    line-height: 1.7;
+}
+
+.event-category {
+    color: #24577d;
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.event-status {
+    color: #555555;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* =========================================
+   WEATHER SECTION
+========================================= */
+
+.weather-section {
+    padding: 55px 0;
+}
+
+.weather-heading {
+    margin-bottom: 25px;
+}
+
+.weather-heading > p:last-child {
+    line-height: 1.7;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+}
+
+.weather-card {
+    background: #e8f0f7;
+    padding: 22px;
+    border-radius: 8px;
+    min-width: 0;
+}
+
+.weather-card h3 {
+    color: #173d5b;
+    margin-top: 0;
+}
+
+.current-weather-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.current-weather-info img,
+.forecast-day img {
+    max-width: 100%;
+    height: auto;
+}
+
+.weather-temperature {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #173d5b;
+    margin: 0;
+}
+
+.weather-description {
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.weather-details {
+    border-top: 1px solid #cbd5df;
+    padding-top: 12px;
+}
+
+.weather-credit {
+    font-size: 0.8rem;
+    color: #555555;
+    margin-top: 15px;
+}
+
+/* THREE-DAY FORECAST */
+
+#weather-forecast {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.forecast-day {
+    min-width: 0;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 12px 4px;
+    overflow-wrap: anywhere;
+}
+
+.forecast-day h4 {
+    font-size: 0.8rem;
+}
+
+.forecast-temperature {
+    color: #173d5b;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.forecast-description {
+    font-size: 0.75rem;
+    text-transform: capitalize;
+}
+
+/* =========================================
+   COMPANY SPOTLIGHTS
+========================================= */
+
+.spotlights-section {
+    background: #f2f5f8;
+    padding: 55px 0;
+}
+
+.spotlights-heading {
+    margin-bottom: 25px;
+}
+
+.spotlight-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+}
+
+.spotlight-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    border-bottom: 4px solid #f4a261;
+    min-width: 0;
+}
+
+.spotlight-logo img {
+    width: 100px;
+    height: 85px;
+    object-fit: contain;
+}
+
+.membership-badge {
+    display: inline-block;
+    padding: 6px 13px;
+    margin: 12px 0;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.membership-badge.gold {
+    background: #fff0c2;
+    color: #684600;
+}
+
+.membership-badge.silver {
+    background: #e5e7eb;
+    color: #34495e;
+}
+
+.spotlight-card h3 {
+    color: #173d5b;
+}
+
+.spotlight-description {
+    line-height: 1.6;
+}
+
+.spotlight-details {
+    border-top: 1px solid #dddddd;
+    padding-top: 12px;
+    text-align: left;
+    overflow-wrap: anywhere;
+    font-size: 0.9rem;
+}
+
+.spotlight-details a {
+    color: #174b70;
+    font-weight: 700;
+}
+
+.loading-message {
+    text-align: center;
+    padding: 25px;
+}
+
+/* =========================================
+   JOIN SECTION
+========================================= */
+
+.join-section {
+    background: #173d5b;
+    color: #ffffff;
+    padding: 50px 0;
+}
+
+.join-section h2 {
+    color: #ffffff;
+}
+
+.join-section .section-label {
+    color: #ffd19e;
+}
+
+.join-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.join-section p {
+    line-height: 1.8;
+}
+
+.join-button {
+    flex-shrink: 0;
+}
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media screen and (max-width: 699px) {
+
+    .primary-navigation {
+        display: none;
+        width: 100%;
+    }
+
+    .primary-navigation.open {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        cursor: pointer;
+    }
+
+}
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}

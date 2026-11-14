@@ -1,13 +1,15 @@
 
-// Display the current year in the footer.
+/* =========================================
+   ABUJA CHAMBER - DATE INFORMATION
+========================================= */
+
 const currentYear = document.querySelector("#current-year");
+
+const lastModified = document.querySelector("#last-modified");
 
 if (currentYear) {
     currentYear.textContent = new Date().getFullYear();
 }
-
-// Display the date the document was last modified.
-const lastModified = document.querySelector("#last-modified");
 
 if (lastModified) {
     lastModified.textContent = document.lastModified;
