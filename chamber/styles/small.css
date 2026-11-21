@@ -361,8 +361,6 @@ body {
     }
 }
 
-
-
 /* =========================================
    ABUJA CHAMBER OF COMMERCE
    SMALL.CSS - MOBILE FIRST
@@ -377,20 +375,7 @@ body {
     margin: 0 auto;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid #f4a261;
-    outline-offset: 3px;
-}
-
-/* =========================================
-   HERO SECTION
-========================================= */
+/* HERO SECTION */
 
 .hero {
     position: relative;
@@ -463,9 +448,7 @@ button:focus-visible {
     background: #ffffff;
 }
 
-/* =========================================
-   SECTION HEADINGS
-========================================= */
+/* SECTION HEADINGS */
 
 .section-label {
     color: #24577d;
@@ -483,9 +466,7 @@ button:focus-visible {
     font-size: 1.8rem;
 }
 
-/* =========================================
-   WELCOME SECTION
-========================================= */
+/* WELCOME SECTION */
 
 .welcome-section {
     padding: 55px 0;
@@ -523,9 +504,7 @@ button:focus-visible {
     text-decoration: underline;
 }
 
-/* =========================================
-   CURRENT EVENTS
-========================================= */
+/* CURRENT EVENTS */
 
 .events-section {
     background: #f2f5f8;
@@ -573,9 +552,7 @@ button:focus-visible {
     font-weight: 700;
 }
 
-/* =========================================
-   WEATHER SECTION
-========================================= */
+/* WEATHER SECTION */
 
 .weather-section {
     padding: 55px 0;
@@ -674,9 +651,7 @@ button:focus-visible {
     text-transform: capitalize;
 }
 
-/* =========================================
-   COMPANY SPOTLIGHTS
-========================================= */
+/* COMPANY SPOTLIGHTS */
 
 .spotlights-section {
     background: #f2f5f8;
@@ -754,9 +729,7 @@ button:focus-visible {
     padding: 25px;
 }
 
-/* =========================================
-   JOIN SECTION
-========================================= */
+/* JOIN SECTION */
 
 .join-section {
     background: #173d5b;
@@ -787,12 +760,9 @@ button:focus-visible {
     flex-shrink: 0;
 }
 
-/* =========================================
-   MOBILE NAVIGATION
-========================================= */
+/* MOBILE NAVIGATION */
 
 @media screen and (max-width: 699px) {
-
     .primary-navigation {
         display: none;
         width: 100%;
@@ -806,22 +776,19 @@ button:focus-visible {
     .menu-toggle {
         cursor: pointer;
     }
-
 }
 
-/* =========================================
-   REDUCE MOTION
-========================================= */
+/* REDUCE MOTION */
 
 @media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
+    html:focus-within {
+        scroll-behavior: auto;
     }
 
+    :root *,
+    :root *::before,
+    :root *::after {
+        animation: none;
+        transition: none;
+    }
 }
