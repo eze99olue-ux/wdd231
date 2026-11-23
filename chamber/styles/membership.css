@@ -464,9 +464,15 @@
 
 }
 
-/* Respect reduced motion preferences */
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
 
     .level-card {
         animation: none;
@@ -474,11 +480,9 @@
         transform: none;
     }
 
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
+    .application-submit,
+    .benefit-trigger span {
+        transition: none;
     }
 
 }
