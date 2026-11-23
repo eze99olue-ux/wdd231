@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Thank you for applying to join the Abuja Chamber of Commerce.">
+        content="Thank you for applying to join the Abuja Chamber of Commerce. Review your membership application details.">
 
     <meta name="author" content="Oluebube Eze">
     <meta name="theme-color" content="#173d5b">
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
-    <link rel="stylesheet" href="styles/join.css">
+    <link rel="stylesheet" href="styles/membership.css">
 
     <script src="scripts/date.js" defer></script>
     <script src="scripts/thankyou.js" defer></script>
@@ -32,22 +32,21 @@
 
 <body>
 
-    <!-- HEADER -->
     <header class="site-header">
+
         <div class="header-content">
 
             <a class="brand" href="index.html"
                 aria-label="Abuja Chamber of Commerce home">
 
                 <img src="images/chamber-logo.svg"
-                    alt="Abuja Chamber of Commerce logo"
-                    width="60" height="60">
+                    alt="" width="60" height="60">
 
                 <span>Abuja Chamber of Commerce</span>
+
             </a>
 
-            <button
-                class="menu-toggle"
+            <button class="menu-toggle"
                 id="menu-toggle"
                 type="button"
                 aria-label="Open navigation menu"
@@ -55,6 +54,7 @@
                 aria-controls="primary-navigation">
 
                 <span aria-hidden="true">☰</span>
+
             </button>
 
             <nav class="primary-navigation"
@@ -64,74 +64,113 @@
                 <a href="index.html">Home</a>
                 <a href="discover.html">Discover</a>
                 <a href="directory.html">Directory</a>
-                <a href="join.html">Join</a>
+                <a href="join.html" aria-current="page">Join</a>
 
             </nav>
+
         </div>
+
     </header>
 
     <main>
 
-        <section class="thankyou-section">
+        <section class="membership-banner">
 
-            <div class="thankyou-card">
+            <div class="membership-banner-inner">
 
-                <p class="section-label">APPLICATION SUBMITTED</p>
+                <span class="membership-eyebrow">
+                    APPLICATION SUBMITTED
+                </span>
 
-                <h1>Thank You for Applying!</h1>
+                <h1>Thank You for Your Interest!</h1>
 
                 <p>
-                    Your membership application has been received.
-                    Below is a summary of the information you submitted.
+                    We appreciate your decision to connect with
+                    the Abuja Chamber of Commerce. Your membership
+                    application information has been received.
                 </p>
-
-                <h2>Application Information</h2>
-
-                <dl class="application-details">
-
-                    <div>
-                        <dt>First Name</dt>
-                        <dd id="display-first-name">Not provided</dd>
-                    </div>
-
-                    <div>
-                        <dt>Last Name</dt>
-                        <dd id="display-last-name">Not provided</dd>
-                    </div>
-
-                    <div>
-                        <dt>Email Address</dt>
-                        <dd id="display-email">Not provided</dd>
-                    </div>
-
-                    <div>
-                        <dt>Mobile Phone</dt>
-                        <dd id="display-phone">Not provided</dd>
-                    </div>
-
-                    <div>
-                        <dt>Business or Organization</dt>
-                        <dd id="display-organization">Not provided</dd>
-                    </div>
-
-                    <div>
-                        <dt>Application Date</dt>
-                        <dd id="display-timestamp">Not provided</dd>
-                    </div>
-
-                </dl>
-
-                <a href="index.html" class="back-home">
-                    Return to Home
-                </a>
 
             </div>
 
         </section>
 
+        <section class="membership-workspace">
+
+            <div class="application-intro">
+
+                <span class="membership-eyebrow">
+                    APPLICATION SUMMARY
+                </span>
+
+                <h2>Your Submitted Information</h2>
+
+                <p>
+                    Below is a summary of the information you
+                    provided in your membership application.
+                </p>
+
+            </div>
+
+            <section class="confirmation-panel"
+                aria-labelledby="confirmation-heading">
+
+                <h2 id="confirmation-heading">
+                    Applicant Details
+                </h2>
+
+                <dl class="confirmation-details">
+
+                    <div class="confirmation-item">
+                        <dt>First Name</dt>
+                        <dd id="confirmed-first-name">Not provided</dd>
+                    </div>
+
+                    <div class="confirmation-item">
+                        <dt>Last Name</dt>
+                        <dd id="confirmed-last-name">Not provided</dd>
+                    </div>
+
+                    <div class="confirmation-item">
+                        <dt>Email Address</dt>
+                        <dd id="confirmed-email">Not provided</dd>
+                    </div>
+
+                    <div class="confirmation-item">
+                        <dt>Mobile Phone Number</dt>
+                        <dd id="confirmed-phone">Not provided</dd>
+                    </div>
+
+                    <div class="confirmation-item">
+                        <dt>Business / Organization</dt>
+                        <dd id="confirmed-organization">Not provided</dd>
+                    </div>
+
+                    <div class="confirmation-item">
+                        <dt>Application Date and Time</dt>
+                        <dd id="confirmed-timestamp">Not available</dd>
+                    </div>
+
+                </dl>
+
+                <p id="confirmation-message"
+                    class="confirmation-message"
+                    role="status"
+                    aria-live="polite">
+
+                    Your application details are displayed above.
+
+                </p>
+
+                <a href="index.html" class="confirmation-home">
+                    Return to Homepage
+                </a>
+
+            </section>
+
+        </section>
+
     </main>
 
-    <!-- FOOTER -->
     <footer class="site-footer">
 
         <div class="footer-content">
@@ -148,14 +187,6 @@
                 <address>
                     Abuja, Federal Capital Territory, Nigeria
                 </address>
-
-                <p>
-                    Email: Replace with the chamber's contact email
-                </p>
-
-                <p>
-                    Phone: Replace with the chamber's contact number
-                </p>
 
             </div>
 

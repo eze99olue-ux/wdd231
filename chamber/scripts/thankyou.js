@@ -1,84 +1,66 @@
 
-// =========================================
-// THANK YOU PAGE JAVASCRIPT
-// =========================================
+// ========================================
+// MEMBERSHIP APPLICATION CONFIRMATION
+// ========================================
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Read submitted form information from the URL
-    const params = new URLSearchParams(window.location.search);
+    // Read the submitted form information.
+    const submittedData = new URLSearchParams(window.location.search);
 
-    // Display submitted information safely
-    const displayFields = {
-        "display-first-name": "firstName",
-        "display-last-name": "lastName",
-        "display-email": "email",
-        "display-phone": "phone",
-        "display-organization": "organization"
+    // Connect URL parameters to their display elements.
+    const applicantFields = {
+        firstName: "confirmed-first-name",
+        lastName: "confirmed-last-name",
+        email: "confirmed-email",
+        phone: "confirmed-phone",
+        organization: "confirmed-organization"
     };
 
-    Object.entries(displayFields).forEach(([elementId, parameter]) => {
+    // Display each submitted value safely.
+    Object.entries(applicantFields).forEach(([parameter, elementId]) => {
 
-        const element = document.getElementById(elementId);
-        const value = params.get(parameter);
+        const displayElement = document.getElementById(elementId);
+        const submittedValue = submittedData.get(parameter);
 
-        if (element) {
-            element.textContent = value || "Not provided";
+        if (displayElement && submittedValue) {
+            displayElement.textContent = submittedValue;
         }
 
     });
 
-    // Display the application timestamp
-    const timestampElement =
-        document.getElementById("display-timestamp");
+    // Retrieve and format the form timestamp.
+    const timestampElement = document.getElementById("confirmed-timestamp");
+    const submittedTimestamp = submittedData.get("timestamp");
 
-    const timestamp = params.get("timestamp");
+    if (timestampElement && submittedTimestamp) {
 
-    if (timestampElement) {
+        const applicationDate = new Date(submittedTimestamp);
 
-        if (timestamp) {
+        if (!Number.isNaN(applicationDate.getTime())) {
 
-            const date = new Date(timestamp);
-
-            timestampElement.textContent =
-                Number.isNaN(date.getTime())
-                    ? "Invalid date"
-                    : date.toLocaleString();
+            timestampElement.textContent = applicationDate.toLocaleString(
+                "en-NG",
+                {
+                    dateStyle: "long",
+                    timeStyle: "short",
+                    timeZone: "Africa/Lagos"
+                }
+            );
 
         } else {
-
-            timestampElement.textContent = "Not provided";
-
+            timestampElement.textContent = "Invalid date";
         }
 
     }
 
-    // Mobile navigation menu
-    const menuToggle = document.querySelector("#menu-toggle");
-    const navigation = document.querySelector("#primary-navigation");
+    // Check whether the page was reached through a form submission.
+    const confirmationMessage = document.getElementById("confirmation-message");
 
-    if (menuToggle && navigation) {
+    if (!submittedData.has("firstName")) {
 
-        menuToggle.addEventListener("click", () => {
-
-            const isExpanded =
-                menuToggle.getAttribute("aria-expanded") === "true";
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                String(!isExpanded)
-            );
-
-            navigation.classList.toggle("open");
-
-            menuToggle.setAttribute(
-                "aria-label",
-                isExpanded
-                    ? "Open navigation menu"
-                    : "Close navigation menu"
-            );
-
-        });
+        confirmationMessage.textContent =
+            "No application information was submitted. Please use the membership form to apply.";
 
     }
 

@@ -6,46 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Apply for membership with the Abuja Chamber of Commerce. Explore membership levels and business development opportunities in Abuja, Nigeria.">
+        content="Apply to become a member of the Abuja Chamber of Commerce. Discover networking, business development and promotional opportunities.">
 
     <meta name="author" content="Oluebube Eze">
     <meta name="theme-color" content="#173d5b">
 
     <meta property="og:title"
-        content="Join | Abuja Chamber of Commerce">
+        content="Membership Application | Abuja Chamber of Commerce">
     <meta property="og:description"
-        content="Become a member of the Abuja Chamber of Commerce and connect with the Abuja business community.">
+        content="Join the Abuja Chamber of Commerce and grow your business connections.">
     <meta property="og:type" content="website">
     <meta property="og:url"
         content="https://eze99olue-ux.github.io/wdd231/chamber/join.html">
     <meta property="og:image"
         content="https://eze99olue-ux.github.io/wdd231/chamber/images/abuja-chamber-social.png">
 
-    <title>Join the Chamber | Abuja Chamber of Commerce</title>
+    <title>Membership Application | Abuja Chamber of Commerce</title>
 
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
-    <link rel="stylesheet" href="styles/join.css">
+    <link rel="stylesheet" href="styles/membership.css">
 
     <script src="scripts/date.js" defer></script>
     <script src="scripts/join.js" defer></script>
 </head>
 
 <body>
+
     <header class="site-header">
         <div class="header-content">
+
             <a class="brand" href="index.html"
                 aria-label="Abuja Chamber of Commerce home">
+
                 <img src="images/chamber-logo.svg"
                     alt="" width="60" height="60">
+
                 <span>Abuja Chamber of Commerce</span>
             </a>
 
@@ -55,338 +60,542 @@
                 aria-label="Open navigation menu"
                 aria-expanded="false"
                 aria-controls="primary-navigation">
+
                 <span aria-hidden="true">☰</span>
             </button>
 
             <nav class="primary-navigation"
                 id="primary-navigation"
                 aria-label="Main navigation">
+
                 <a href="index.html">Home</a>
                 <a href="discover.html">Discover</a>
                 <a href="directory.html">Directory</a>
                 <a href="join.html" class="active"
                     aria-current="page">Join</a>
+
             </nav>
         </div>
     </header>
 
-    <main class="join-main">
-        <section class="join-hero">
-            <div class="join-hero-content">
-                <p class="section-label">BECOME A MEMBER</p>
+    <main>
 
-                <h1>Join the Abuja Chamber of Commerce</h1>
+        <!-- Page introduction -->
+        <section class="membership-banner">
+            <div class="membership-banner-inner">
+
+                <span class="membership-eyebrow">
+                    YOUR BUSINESS. YOUR COMMUNITY. YOUR FUTURE.
+                </span>
+
+                <h1>Become a Chamber Member</h1>
 
                 <p>
-                    Connect with business leaders, discover new
-                    opportunities and become part of a community
-                    committed to business growth and development.
+                    Take your business further by connecting with
+                    entrepreneurs, industry leaders and organizations
+                    working to strengthen the Abuja business community.
                 </p>
+
             </div>
         </section>
 
-        <section class="application-section section-container">
-            <div class="application-heading">
-                <p class="section-label">MEMBERSHIP APPLICATION</p>
+        <!-- Application and membership information -->
+        <section class="membership-workspace">
 
-                <h2>Complete Your Application</h2>
+            <div class="application-intro">
+                <span class="membership-eyebrow">
+                    START YOUR JOURNEY
+                </span>
+
+                <h2>Membership Application</h2>
 
                 <p>
-                    Fill in the information below to apply for
-                    membership. Fields marked as required must
-                    be completed.
+                    Complete the application form below to express
+                    your interest in joining the Abuja Chamber of
+                    Commerce. Please provide accurate information.
                 </p>
             </div>
 
-            <form class="membership-form"
-                action="thankyou.html"
-                method="get">
+            <div class="membership-layout">
 
-                <fieldset>
-                    <legend>Personal Information</legend>
+                <!-- Application form -->
+                <form class="application-form"
+                    action="thankyou.html"
+                    method="get">
 
-                    <label for="first-name">
-                        First Name
-                        <input type="text"
-                            id="first-name"
-                            name="firstName"
-                            title="Enter your first name"
-                            autocomplete="given-name"
-                            required>
-                    </label>
+                    <fieldset class="form-group">
 
-                    <label for="last-name">
-                        Last Name
-                        <input type="text"
-                            id="last-name"
-                            name="lastName"
-                            title="Enter your last name"
-                            autocomplete="family-name"
-                            required>
-                    </label>
+                        <legend>01. Applicant Details</legend>
 
-                    <label for="organization-title">
-                        Organizational Title
-                        <input type="text"
-                            id="organization-title"
-                            name="organizationTitle"
-                            title="Enter your organizational title using at least seven characters. Letters, spaces and hyphens are allowed."
-                            autocomplete="organization-title"
-                            pattern="(?=.*[A-Za-z])[A-Za-z -]{7,}"
-                            minlength="7"
-                            required>
-                    </label>
+                        <div class="form-fields">
 
-                    <label for="email">
-                        Email Address
-                        <input type="email"
-                            id="email"
-                            name="email"
-                            title="Enter a valid email address"
-                            autocomplete="email"
-                            placeholder="example@email.com"
-                            required>
-                    </label>
+                            <label for="firstName">
+                                First Name
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    title="Enter your first name"
+                                    autocomplete="given-name"
+                                    placeholder="e.g. Oluebube"
+                                    required>
+                            </label>
 
-                    <label for="phone">
-                        Mobile Phone Number
-                        <input type="tel"
-                            id="phone"
-                            name="phone"
-                            title="Enter your mobile phone number"
-                            autocomplete="tel"
-                            required>
-                    </label>
-                </fieldset>
+                            <label for="lastName">
+                                Last Name
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    title="Enter your last name"
+                                    autocomplete="family-name"
+                                    placeholder="e.g. Eze"
+                                    required>
+                            </label>
 
-                <fieldset>
-                    <legend>Business Information</legend>
+                            <label for="jobTitle">
+                                Organizational Title
+                                <input
+                                    type="text"
+                                    id="jobTitle"
+                                    name="jobTitle"
+                                    title="Enter your organizational title using at least seven letters, spaces or hyphens"
+                                    autocomplete="organization-title"
+                                    pattern="[A-Za-z -]{7,}"
+                                    placeholder="e.g. Office Manager">
+                            </label>
 
-                    <label for="organization">
-                        Business or Organization Name
-                        <input type="text"
-                            id="organization"
-                            name="organization"
-                            title="Enter your business or organization name"
-                            autocomplete="organization"
-                            required>
-                    </label>
+                            <label for="emailAddress">
+                                Email Address
+                                <input
+                                    type="email"
+                                    id="emailAddress"
+                                    name="email"
+                                    title="Enter a valid email address"
+                                    autocomplete="email"
+                                    placeholder="name@example.com"
+                                    required>
+                            </label>
 
-                    <label for="membership-level">
-                        Membership Level
-                        <select id="membership-level"
-                            name="membership"
-                            title="Select your preferred membership level"
-                            required>
-                            <option value="" disabled selected>
-                                Select a membership level
-                            </option>
-                            <option value="NP Membership">
-                                NP Membership (Non-Profit)
-                            </option>
-                            <option value="Bronze Membership">
-                                Bronze Membership
-                            </option>
-                            <option value="Silver Membership">
-                                Silver Membership
-                            </option>
-                            <option value="Gold Membership">
-                                Gold Membership
-                            </option>
-                        </select>
-                    </label>
+                            <label for="mobileNumber">
+                                Mobile Phone Number
+                                <input
+                                    type="tel"
+                                    id="mobileNumber"
+                                    name="phone"
+                                    title="Enter your mobile phone number"
+                                    autocomplete="tel"
+                                    placeholder="e.g. 08012345678"
+                                    required>
+                            </label>
 
-                    <label for="description">
-                        Business or Organization Description
-                        <textarea id="description"
-                            name="description"
-                            title="Briefly describe your business or organization"
-                            rows="5"
-                            placeholder="Tell us about your business or organization..."></textarea>
-                    </label>
-                </fieldset>
+                        </div>
+                    </fieldset>
 
-                <input type="hidden" id="timestamp" name="timestamp">
+                    <fieldset class="form-group">
 
-                <button type="submit" class="submit-button">
-                    Submit Membership Application
-                </button>
-            </form>
+                        <legend>02. Organization Details</legend>
+
+                        <div class="form-fields">
+
+                            <label for="businessName">
+                                Business / Organization Name
+                                <input
+                                    type="text"
+                                    id="businessName"
+                                    name="organization"
+                                    title="Enter the registered name of your business or organization"
+                                    autocomplete="organization"
+                                    placeholder="Enter organization name"
+                                    required>
+                            </label>
+
+                            <label for="membership">
+                                Select Membership Level
+                                <select
+                                    id="membership"
+                                    name="membership"
+                                    title="Choose your preferred chamber membership"
+                                    autocomplete="off"
+                                    required>
+
+                                    <option value="" disabled selected>
+                                        Choose a membership level
+                                    </option>
+
+                                    <option value="np">
+                                        NP Membership
+                                    </option>
+
+                                    <option value="bronze">
+                                        Bronze Membership
+                                    </option>
+
+                                    <option value="silver">
+                                        Silver Membership
+                                    </option>
+
+                                    <option value="gold">
+                                        Gold Membership
+                                    </option>
+
+                                </select>
+                            </label>
+
+                            <label for="businessDescription"
+                                class="description-field">
+
+                                Business / Organization Description
+
+                                <textarea
+                                    id="businessDescription"
+                                    name="description"
+                                    title="Describe your business, its activities and services"
+                                    autocomplete="off"
+                                    rows="5"
+                                    placeholder="Briefly tell us about your organization..."></textarea>
+
+                            </label>
+
+                        </div>
+                    </fieldset>
+
+                    <!-- Automatically populated when the page loads -->
+                    <input type="hidden"
+                        id="formTimestamp"
+                        name="timestamp">
+
+                    <div class="form-submit-area">
+
+                        <p>
+                            Please review your information before
+                            submitting your application.
+                        </p>
+
+                        <input
+                            type="submit"
+                            value="Submit Application"
+                            class="application-submit">
+
+                    </div>
+
+                </form>
+
+                <!-- Membership cards -->
+                <aside class="membership-options"
+                    aria-labelledby="options-heading">
+
+                    <div class="options-intro">
+                        <span class="membership-eyebrow">
+                            FIND YOUR FIT
+                        </span>
+
+                        <h2 id="options-heading">
+                            Membership Benefits
+                        </h2>
+
+                        <p>
+                            Choose the membership that supports
+                            your organization's goals.
+                        </p>
+                    </div>
+
+                    <div class="membership-levels">
+
+                        <article class="level-card level-np">
+
+                            <div class="level-top">
+                                <span class="level-number">01</span>
+                                <span class="level-category">
+                                    COMMUNITY
+                                </span>
+                            </div>
+
+                            <h3>NP Membership</h3>
+
+                            <p>
+                                For eligible non-profit organizations
+                                seeking meaningful community connections.
+                            </p>
+
+                            <button type="button"
+                                class="benefit-trigger"
+                                data-dialog="dialog-np"
+                                aria-haspopup="dialog">
+                                Explore Benefits
+                                <span aria-hidden="true">→</span>
+                            </button>
+
+                        </article>
+
+                        <article class="level-card level-bronze">
+
+                            <div class="level-top">
+                                <span class="level-number">02</span>
+                                <span class="level-category">
+                                    ENTRY LEVEL
+                                </span>
+                            </div>
+
+                            <h3>Bronze Membership</h3>
+
+                            <p>
+                                Build professional relationships
+                                and introduce your business to
+                                the wider community.
+                            </p>
+
+                            <button type="button"
+                                class="benefit-trigger"
+                                data-dialog="dialog-bronze"
+                                aria-haspopup="dialog">
+                                Explore Benefits
+                                <span aria-hidden="true">→</span>
+                            </button>
+
+                        </article>
+
+                        <article class="level-card level-silver">
+
+                            <div class="level-top">
+                                <span class="level-number">03</span>
+                                <span class="level-category">
+                                    BUSINESS GROWTH
+                                </span>
+                            </div>
+
+                            <h3>Silver Membership</h3>
+
+                            <p>
+                                Improve your visibility and access
+                                additional opportunities for
+                                business development.
+                            </p>
+
+                            <button type="button"
+                                class="benefit-trigger"
+                                data-dialog="dialog-silver"
+                                aria-haspopup="dialog">
+                                Explore Benefits
+                                <span aria-hidden="true">→</span>
+                            </button>
+
+                        </article>
+
+                        <article class="level-card level-gold">
+
+                            <div class="level-top">
+                                <span class="level-number">04</span>
+                                <span class="level-category">
+                                    PREMIUM
+                                </span>
+                            </div>
+
+                            <h3>Gold Membership</h3>
+
+                            <p>
+                                Enjoy enhanced promotional
+                                opportunities and stronger
+                                business connections.
+                            </p>
+
+                            <button type="button"
+                                class="benefit-trigger"
+                                data-dialog="dialog-gold"
+                                aria-haspopup="dialog">
+                                Explore Benefits
+                                <span aria-hidden="true">→</span>
+                            </button>
+
+                        </article>
+
+                    </div>
+                </aside>
+
+            </div>
         </section>
 
-        <section class="membership-section section-container">
-            <div class="membership-heading">
-                <p class="section-label">MEMBERSHIP OPTIONS</p>
+        <!-- Membership information dialogs -->
 
-                <h2>Choose Your Membership Level</h2>
+        <dialog id="dialog-np" class="benefit-dialog"
+            aria-labelledby="np-heading">
+
+            <div class="dialog-inner">
+
+                <span class="dialog-tag">COMMUNITY MEMBERSHIP</span>
+
+                <h2 id="np-heading">NP Membership Benefits</h2>
 
                 <p>
-                    Explore the membership options available
-                    and select the level that best suits your
-                    organization.
+                    Created for qualifying non-profit organizations
+                    interested in community engagement and networking.
                 </p>
-            </div>
 
-            <div class="membership-cards">
-                <article class="membership-card np-card">
-                    <div class="membership-card-content">
-                        <span class="membership-label">NON-PROFIT</span>
-                        <h3>NP Membership</h3>
-                        <p>
-                            Designed for eligible non-profit
-                            organizations interested in connecting
-                            with the business community.
-                        </p>
-                        <button type="button" class="learn-more"
-                            data-modal="np-modal">
-                            View Benefits
-                        </button>
-                    </div>
-                </article>
-
-                <article class="membership-card bronze-card">
-                    <div class="membership-card-content">
-                        <span class="membership-label">STARTER</span>
-                        <h3>Bronze Membership</h3>
-                        <p>
-                            A starting point for businesses looking
-                            to build connections and increase
-                            their visibility.
-                        </p>
-                        <button type="button" class="learn-more"
-                            data-modal="bronze-modal">
-                            View Benefits
-                        </button>
-                    </div>
-                </article>
-
-                <article class="membership-card silver-card">
-                    <div class="membership-card-content">
-                        <span class="membership-label">GROWTH</span>
-                        <h3>Silver Membership</h3>
-                        <p>
-                            Suitable for growing businesses seeking
-                            greater exposure and opportunities
-                            for development.
-                        </p>
-                        <button type="button" class="learn-more"
-                            data-modal="silver-modal">
-                            View Benefits
-                        </button>
-                    </div>
-                </article>
-
-                <article class="membership-card gold-card">
-                    <div class="membership-card-content">
-                        <span class="membership-label">PREMIUM</span>
-                        <h3>Gold Membership</h3>
-                        <p>
-                            For established organizations looking
-                            for enhanced visibility and stronger
-                            business connections.
-                        </p>
-                        <button type="button" class="learn-more"
-                            data-modal="gold-modal">
-                            View Benefits
-                        </button>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <dialog id="np-modal" class="membership-dialog">
-            <div class="dialog-content">
-                <h2>NP Membership Benefits</h2>
                 <ul>
-                    <li>Access to chamber networking opportunities.</li>
-                    <li>Participation in selected community activities.</li>
-                    <li>Access to relevant business information.</li>
+                    <li>No membership fee.</li>
+                    <li>Access to selected chamber networking activities.</li>
+                    <li>Participation in eligible community events.</li>
+                    <li>Access to relevant chamber business information.</li>
                     <li>Opportunities to connect with other organizations.</li>
                 </ul>
-                <button type="button" class="close-modal">Close</button>
+
+                <button type="button" class="dialog-close">
+                    Close Window
+                </button>
+
             </div>
         </dialog>
 
-        <dialog id="bronze-modal" class="membership-dialog">
-            <div class="dialog-content">
-                <h2>Bronze Membership Benefits</h2>
+        <dialog id="dialog-bronze" class="benefit-dialog"
+            aria-labelledby="bronze-heading">
+
+            <div class="dialog-inner">
+
+                <span class="dialog-tag">ENTRY LEVEL MEMBERSHIP</span>
+
+                <h2 id="bronze-heading">Bronze Membership Benefits</h2>
+
+                <p>
+                    An excellent starting point for businesses
+                    seeking exposure and professional connections.
+                </p>
+
                 <ul>
-                    <li>Access to chamber networking opportunities.</li>
-                    <li>Business directory listing.</li>
+                    <li>Standard business directory listing.</li>
+                    <li>Access to selected networking events.</li>
+                    <li>Invitations to member business activities.</li>
                     <li>Access to selected business workshops.</li>
-                    <li>Opportunities to connect with other members.</li>
+                    <li>Opportunities to build professional relationships.</li>
                 </ul>
-                <button type="button" class="close-modal">Close</button>
+
+                <button type="button" class="dialog-close">
+                    Close Window
+                </button>
+
             </div>
         </dialog>
 
-        <dialog id="silver-modal" class="membership-dialog">
-            <div class="dialog-content">
-                <h2>Silver Membership Benefits</h2>
+        <dialog id="dialog-silver" class="benefit-dialog"
+            aria-labelledby="silver-heading">
+
+            <div class="dialog-inner">
+
+                <span class="dialog-tag">BUSINESS GROWTH MEMBERSHIP</span>
+
+                <h2 id="silver-heading">Silver Membership Benefits</h2>
+
+                <p>
+                    Designed for organizations looking to strengthen
+                    their market presence and business opportunities.
+                </p>
+
                 <ul>
                     <li>All Bronze membership benefits.</li>
                     <li>Enhanced business directory visibility.</li>
-                    <li>Access to additional business development events.</li>
-                    <li>Promotional opportunities through chamber channels.</li>
+                    <li>Access to additional training sessions.</li>
+                    <li>Discounts on selected chamber events.</li>
+                    <li>Additional promotional opportunities.</li>
+                    <li>Priority access to selected networking activities.</li>
                 </ul>
-                <button type="button" class="close-modal">Close</button>
+
+                <button type="button" class="dialog-close">
+                    Close Window
+                </button>
+
             </div>
         </dialog>
 
-        <dialog id="gold-modal" class="membership-dialog">
-            <div class="dialog-content">
-                <h2>Gold Membership Benefits</h2>
+        <dialog id="dialog-gold" class="benefit-dialog"
+            aria-labelledby="gold-heading">
+
+            <div class="dialog-inner">
+
+                <span class="dialog-tag">PREMIUM MEMBERSHIP</span>
+
+                <h2 id="gold-heading">Gold Membership Benefits</h2>
+
+                <p>
+                    Our premium membership for organizations
+                    seeking greater visibility and business influence.
+                </p>
+
                 <ul>
                     <li>All Silver membership benefits.</li>
-                    <li>Premium business directory visibility.</li>
-                    <li>Priority promotional opportunities.</li>
-                    <li>Additional networking and partnership opportunities.</li>
-                    <li>Enhanced access to selected chamber activities.</li>
+                    <li>Premium business directory placement.</li>
+                    <li>Priority business promotion opportunities.</li>
+                    <li>Featured business spotlight opportunities.</li>
+                    <li>Exclusive invitations to selected chamber events.</li>
+                    <li>Enhanced networking and partnership opportunities.</li>
+                    <li>Priority access to selected training programmes.</li>
                 </ul>
-                <button type="button" class="close-modal">Close</button>
+
+                <button type="button" class="dialog-close">
+                    Close Window
+                </button>
+
             </div>
         </dialog>
+
     </main>
 
     <footer class="site-footer">
+
         <div class="footer-content">
+
             <div class="footer-contact">
+
                 <h2>Abuja Chamber of Commerce</h2>
+
                 <p>
                     Promoting business growth and development
                     in Abuja, Nigeria.
                 </p>
+
                 <address>
                     Abuja, Federal Capital Territory, Nigeria
                 </address>
+
             </div>
 
             <div class="footer-social">
+
                 <h2>Connect With Us</h2>
+
                 <a href="https://www.facebook.com/"
                     target="_blank"
                     rel="noopener noreferrer">Facebook</a>
+
                 <a href="https://www.linkedin.com/"
                     target="_blank"
                     rel="noopener noreferrer">LinkedIn</a>
+
                 <a href="https://www.instagram.com/"
                     target="_blank"
                     rel="noopener noreferrer">Instagram</a>
+
             </div>
 
             <div class="footer-credit">
+
                 <p>WDD231 Web Frontend Development I</p>
+
                 <p>Created by Oluebube Eze</p>
+
                 <p>
                     &copy; <span id="current-year"></span>
                     Abuja Chamber of Commerce
                 </p>
+
                 <p>
                     Last Modified:
                     <span id="last-modified"></span>
                 </p>
+
             </div>
+
         </div>
+
     </footer>
+
 </body>
 </html>

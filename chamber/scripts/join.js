@@ -1,83 +1,50 @@
 
-// =========================================
-// JOIN PAGE JAVASCRIPT
-// =========================================
+// ========================================
+// CHAMBER MEMBERSHIP APPLICATION
+// ========================================
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Set the application submission timestamp
-    const timestampField = document.querySelector("#timestamp");
+    // Record the date and time when the form loads.
+    const timestampField = document.querySelector("#formTimestamp");
 
     if (timestampField) {
         timestampField.value = new Date().toISOString();
     }
 
-    // Mobile navigation menu
-    const menuToggle = document.querySelector("#menu-toggle");
-    const navigation = document.querySelector("#primary-navigation");
+    // Find all membership information buttons.
+    const benefitButtons = document.querySelectorAll("[data-dialog]");
 
-    if (menuToggle && navigation) {
-        menuToggle.addEventListener("click", () => {
-
-            const isExpanded =
-                menuToggle.getAttribute("aria-expanded") === "true";
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                String(!isExpanded)
-            );
-
-            navigation.classList.toggle("open");
-
-            menuToggle.setAttribute(
-                "aria-label",
-                isExpanded
-                    ? "Open navigation menu"
-                    : "Close navigation menu"
-            );
-        });
-    }
-
-    // Open membership information dialogs
-    const modalButtons = document.querySelectorAll("[data-modal]");
-
-    modalButtons.forEach((button) => {
+    benefitButtons.forEach((button) => {
 
         button.addEventListener("click", () => {
 
-            const modalId = button.getAttribute("data-modal");
-            const modal = document.getElementById(modalId);
+            const dialogId = button.dataset.dialog;
+            const selectedDialog = document.getElementById(dialogId);
 
-            if (modal) {
-                modal.showModal();
+            if (selectedDialog) {
+                selectedDialog.showModal();
             }
 
         });
 
     });
 
-    // Close dialogs using their close buttons
-    const closeButtons = document.querySelectorAll(".close-modal");
+    // Set up all membership dialogs.
+    const membershipDialogs = document.querySelectorAll(".benefit-dialog");
 
-    closeButtons.forEach((button) => {
+    membershipDialogs.forEach((dialog) => {
 
-        button.addEventListener("click", () => {
+        // Close using the close button.
+        const closeButton = dialog.querySelector(".dialog-close");
 
-            const dialog = button.closest("dialog");
-
-            if (dialog) {
+        if (closeButton) {
+            closeButton.addEventListener("click", () => {
                 dialog.close();
-            }
+            });
+        }
 
-        });
-
-    });
-
-    // Close a dialog when clicking outside its content
-    const dialogs = document.querySelectorAll(".membership-dialog");
-
-    dialogs.forEach((dialog) => {
-
+        // Close when the user clicks the backdrop.
         dialog.addEventListener("click", (event) => {
 
             if (event.target === dialog) {
