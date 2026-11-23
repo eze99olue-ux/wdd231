@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const displayElement = document.getElementById(elementId);
         const submittedValue = submittedData.get(parameter);
 
-        if (displayElement && submittedValue) {
-            displayElement.textContent = submittedValue;
+        if (displayElement) {
+            displayElement.textContent = submittedValue || "Not provided";
         }
 
     });
@@ -33,23 +33,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const timestampElement = document.getElementById("confirmed-timestamp");
     const submittedTimestamp = submittedData.get("timestamp");
 
-    if (timestampElement && submittedTimestamp) {
+    if (timestampElement) {
 
-        const applicationDate = new Date(submittedTimestamp);
+        if (submittedTimestamp) {
 
-        if (!Number.isNaN(applicationDate.getTime())) {
+            const applicationDate = new Date(submittedTimestamp);
 
-            timestampElement.textContent = applicationDate.toLocaleString(
-                "en-NG",
-                {
-                    dateStyle: "long",
-                    timeStyle: "short",
-                    timeZone: "Africa/Lagos"
-                }
-            );
+            if (!Number.isNaN(applicationDate.getTime())) {
+
+                timestampElement.textContent = applicationDate.toLocaleString(
+                    "en-NG",
+                    {
+                        dateStyle: "long",
+                        timeStyle: "short",
+                        timeZone: "Africa/Lagos"
+                    }
+                );
+
+            } else {
+                timestampElement.textContent = "Invalid date";
+            }
 
         } else {
-            timestampElement.textContent = "Invalid date";
+            timestampElement.textContent = "Not available";
         }
 
     }
@@ -57,10 +63,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // Check whether the page was reached through a form submission.
     const confirmationMessage = document.getElementById("confirmation-message");
 
-    if (!submittedData.has("firstName")) {
+    if (confirmationMessage) {
 
-        confirmationMessage.textContent =
-            "No application information was submitted. Please use the membership form to apply.";
+        if (!submittedData.has("firstName")) {
+
+            confirmationMessage.textContent =
+                "No application information was submitted. Please use the membership form to apply.";
+
+        } else {
+
+            confirmationMessage.textContent =
+                "Your application details are displayed above.";
+
+        }
 
     }
 
