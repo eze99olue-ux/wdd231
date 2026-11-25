@@ -1,0 +1,110 @@
+:root {
+    --primary-color: #24577D;
+    --accent-color: #F4A261;
+    --background-color: #F5F7FA;
+    --text-color: #333333;
+    --white: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 0;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 25px auto;
+}
+
+section {
+    background-color: var(--white);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 5px;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.color-swatch {
+    display: block;
+    width: 55px;
+    height: 45px;
+    border: 1px solid #cccccc;
+    flex-shrink: 0;
+}
+
+.primary {
+    background-color: var(--primary-color);
+}
+
+.accent {
+    background-color: var(--accent-color);
+}
+
+.background {
+    background-color: var(--background-color);
+}
+
+.wireframe-image {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 20px auto;
+    border: 1px solid #cccccc;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 15px;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 95%;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    .color-item {
+        align-items: flex-start;
+    }
+}
