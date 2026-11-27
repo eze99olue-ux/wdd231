@@ -1,0 +1,191 @@
+/* Discover page styles */
+
+.discover-main {
+    width: min(94%, 1200px);
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.discover-intro {
+    max-width: 750px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+}
+
+.discover-intro h1 {
+    margin: 0.25rem 0 0.75rem;
+    color: #173d5b;
+}
+
+.discover-intro p {
+    line-height: 1.7;
+}
+
+.visit-message {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-left: 5px solid #f4a261;
+    border-radius: 5px;
+    background: #f5f7fa;
+    color: #333333;
+    font-weight: 700;
+}
+
+.discover-section > h2 {
+    color: #173d5b;
+    margin-bottom: 1.25rem;
+}
+
+.discover-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+
+    /* Small screen: named areas, one card per row */
+    grid-template-areas:
+        "place1"
+        "place2"
+        "place3"
+        "place4"
+        "place5"
+        "place6"
+        "place7"
+        "place8";
+}
+
+.place-1 { grid-area: place1; }
+.place-2 { grid-area: place2; }
+.place-3 { grid-area: place3; }
+.place-4 { grid-area: place4; }
+.place-5 { grid-area: place5; }
+.place-6 { grid-area: place6; }
+.place-7 { grid-area: place7; }
+.place-8 { grid-area: place8; }
+
+.discover-card {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid #d5dce2;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.discover-card h2 {
+    margin: 0 0 0.75rem;
+    color: #173d5b;
+    font-size: 1.25rem;
+}
+
+.discover-card figure {
+    width: 100%;
+    margin: 0 0 0.75rem;
+}
+
+.discover-card img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.discover-card address {
+    margin-bottom: 0.75rem;
+    color: #333333;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.discover-card p {
+    line-height: 1.6;
+}
+
+.learn-more {
+    display: inline-block;
+    margin-top: auto;
+    padding: 0.65rem 1rem;
+    border-radius: 5px;
+    background: #173d5b;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.learn-more:hover,
+.learn-more:focus-visible {
+    background: #f4a261;
+    color: #173d5b;
+}
+
+/* Medium screens: 641px to 1024px */
+@media (min-width: 641px) {
+    .discover-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "place1 place1"
+            "place2 place3"
+            "place4 place4"
+            "place5 place6"
+            "place7 place8";
+    }
+
+    .place-1,
+    .place-4 {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 1rem;
+        align-items: start;
+    }
+
+    .place-1 h2,
+    .place-4 h2 {
+        grid-column: 1 / -1;
+    }
+
+    .place-1 figure,
+    .place-4 figure {
+        grid-row: span 3;
+    }
+
+    .place-1 img,
+    .place-4 img {
+        height: 100%;
+        min-height: 200px;
+    }
+}
+
+/* Large screens: 1025px and above */
+@media (min-width: 1025px) {
+    .discover-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-areas:
+            "place1 place1 place2 place3"
+            "place4 place5 place5 place6"
+            "place7 place8 place8 place6";
+    }
+
+    /* Image hover effect is only enabled above mobile width */
+    .discover-card img {
+        transition: transform 250ms ease, filter 250ms ease;
+    }
+
+    .discover-card figure {
+        overflow: hidden;
+    }
+
+    .discover-card img:hover {
+        transform: scale(1.04);
+        filter: brightness(0.9);
+    }
+}
+
+/* Prevent motion effects for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .discover-card img {
+        transition: none;
+    }
+}
