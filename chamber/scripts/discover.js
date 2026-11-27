@@ -70,6 +70,8 @@ function displayPlaces() {
     places.forEach((place, index) => {
         grid.appendChild(createPlaceCard(place, index));
     });
+
+    grid.setAttribute("aria-busy", "false");
 }
 
 showVisitMessage();

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,102 +6,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Discover places, attractions, and landmarks in Abuja, Nigeria.">
+        content="Discover Abuja's landmarks, parks, cultural attractions and places of interest with the Abuja Chamber of Commerce.">
+
     <meta name="author" content="Oluebube Eze">
     <meta name="theme-color" content="#173d5b">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title"
+        content="Discover Abuja | Abuja Chamber of Commerce">
+
+    <meta property="og:description"
+        content="Explore Abuja's landmarks, parks, cultural attractions and places of interest with the Abuja Chamber of Commerce.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:image"
+        content="https://eze99olue-ux.github.io/wdd231/chamber/images/chamber-logo.svg">
+
+    <meta property="og:url"
+        content="https://eze99olue-ux.github.io/wdd231/chamber/discover.html">
 
     <title>Discover Abuja | Abuja Chamber of Commerce</title>
 
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- CSS Files -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
     <link rel="stylesheet" href="styles/discover.css">
 
+    <!-- JavaScript Files -->
     <script src="scripts/date.js" defer></script>
     <script src="scripts/discover.js" type="module"></script>
 </head>
 
 <body>
+
+    <!-- HEADER -->
     <header class="site-header">
         <div class="header-content">
+
             <a class="brand" href="index.html"
                 aria-label="Abuja Chamber of Commerce home">
+
                 <img src="images/chamber-logo.svg"
-                    alt="Abuja Chamber of Commerce logo"
-                    width="60" height="60">
+                    alt=""
+                    width="60"
+                    height="60">
+
                 <span>Abuja Chamber of Commerce</span>
             </a>
 
-            <button class="menu-toggle" id="menu-toggle" type="button"
-                aria-label="Open navigation menu" aria-expanded="false"
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
                 aria-controls="primary-navigation">
+
                 <span aria-hidden="true">☰</span>
             </button>
 
-            <nav class="primary-navigation" id="primary-navigation"
+            <nav class="primary-navigation"
+                id="primary-navigation"
                 aria-label="Main navigation">
+
                 <a href="index.html">Home</a>
-                <a href="discover.html" class="active" aria-current="page">Discover</a>
+
+                <a href="discover.html"
+                    class="active"
+                    aria-current="page">Discover</a>
+
                 <a href="directory.html">Directory</a>
+
                 <a href="join.html">Join</a>
+
             </nav>
         </div>
     </header>
 
     <main class="discover-main">
+
+        <!-- INTRODUCTION -->
         <section class="discover-intro">
+
             <p class="section-label">EXPLORE THE CAPITAL</p>
+
             <h1>Discover Abuja</h1>
+
             <p>
-                Explore landmarks, green spaces, and cultural attractions
+                Explore landmarks, green spaces and cultural attractions
                 that make Abuja a memorable place to visit and do business.
             </p>
+
         </section>
 
-        <p id="visit-message" class="visit-message" aria-live="polite"></p>
+        <!-- VISITOR MESSAGE -->
+        <p id="visit-message"
+            class="visit-message"
+            aria-live="polite">
+        </p>
 
-        <section class="discover-section" aria-labelledby="places-heading">
+        <!-- PLACES OF INTEREST -->
+        <section class="discover-section"
+            aria-labelledby="places-heading">
+
             <h2 id="places-heading">Places of Interest</h2>
-            <div id="discover-grid" class="discover-grid" aria-live="polite">
+
+            <div id="discover-grid"
+                class="discover-grid"
+                aria-live="polite"
+                aria-busy="true">
+
                 <p>Loading places of interest...</p>
+
             </div>
+
         </section>
+
     </main>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
+
         <div class="footer-content">
+
             <div class="footer-contact">
+
                 <h2>Abuja Chamber of Commerce</h2>
-                <p>Promoting business growth and development in Abuja, Nigeria.</p>
-                <address>Abuja, Federal Capital Territory, Nigeria</address>
-                <p>Email: Replace with the chamber's contact email</p>
-                <p>Phone: Replace with the chamber's contact number</p>
+
+                <p>
+                    Promoting business growth and development
+                    in Abuja, Nigeria.
+                </p>
+
+                <address>
+                    Abuja, Federal Capital Territory, Nigeria
+                </address>
+
+                <p>
+                    Email: Replace with the chamber's contact email
+                </p>
+
+                <p>
+                    Phone: Replace with the chamber's contact number
+                </p>
+
             </div>
 
             <div class="footer-social">
+
                 <h2>Connect With Us</h2>
+
                 <a href="https://www.facebook.com/"
-                    target="_blank" rel="noopener noreferrer">Facebook</a>
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Facebook
+                </a>
+
                 <a href="https://www.linkedin.com/"
-                    target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+
                 <a href="https://www.instagram.com/"
-                    target="_blank" rel="noopener noreferrer">Instagram</a>
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Instagram
+                </a>
+
             </div>
 
             <div class="footer-credit">
+
                 <p>WDD231 Web Frontend Development I</p>
+
                 <p>Created by Oluebube Eze</p>
-                <p>&copy; <span id="current-year"></span> Abuja Chamber of Commerce</p>
-                <p>Last Modified: <span id="last-modified"></span></p>
+
+                <p>
+                    &copy; <span id="current-year"></span>
+                    Abuja Chamber of Commerce
+                </p>
+
+                <p>
+                    Last Modified:
+                    <span id="last-modified"></span>
+                </p>
+
             </div>
+
         </div>
+
     </footer>
+
 </body>
 </html>
